@@ -57,7 +57,7 @@ def main():
   for filename in os.listdir(directory):
      f = os.path.join(directory, filename)
      # checking if it is a file
-     if os.path.isdir(f):
+     #if os.path.isdir(f):
                   
        
 

@@ -18,7 +18,7 @@ MANIFEST_FILE_NAME = 'upload_manifest_generated.xml'
 
 
 class PanoptoUploader:
-    def __init__(self, server, ssl_verify, oauth2, videoTitle, videoDescription, manifest_path):
+    def __init__(self, server, ssl_verify, oauth2, videoTitle, videoDescription):
         '''
         Constructor of uploader instance.
         This goes through authorization step of the target server.
@@ -28,7 +28,6 @@ class PanoptoUploader:
         self.oauth2 = oauth2
         self.videoTitle = videoTitle
         self.videoDescription = videoDescription
-        self.manifest_path = manifest_path
 
         # Use requests module's Session object in this example.
         # This is not mandatory, but this enables applying the same settings (especially
