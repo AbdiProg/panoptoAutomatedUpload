@@ -11,14 +11,14 @@ import boto3  # AWS SDK (boto3)
 PART_SIZE = 20 * 1024 * 1024
 
 # Template for manifest XML file.
-MANIFEST_FILE_TEMPLATE = '../upload_manifest_template.xml'
+MANIFEST_FILE_TEMPLATE = 'upload_manifest_template.xml'
 
 # Filename of manifest XML file. Any filename is acceptable.
-MANIFEST_FILE_NAME = '../upload_manifest_generated.xml'
+MANIFEST_FILE_NAME = 'upload_manifest_generated.xml'
 
 
 class PanoptoUploader:
-    def __init__(self, server, ssl_verify, oauth2, videoTitle, videoDescription):
+    def __init__(self, server, ssl_verify, oauth2, videoTitle, videoDescription, manifest_path):
         '''
         Constructor of uploader instance.
         This goes through authorization step of the target server.
@@ -28,6 +28,7 @@ class PanoptoUploader:
         self.oauth2 = oauth2
         self.videoTitle = videoTitle
         self.videoDescription = videoDescription
+        self.manifest_path = manifest_path
 
         # Use requests module's Session object in this example.
         # This is not mandatory, but this enables applying the same settings (especially

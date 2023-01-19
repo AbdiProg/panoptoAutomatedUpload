@@ -52,7 +52,7 @@ def uploadVideos(sourcePath, directoryPanoptoID):
         if os.path.isdir(p):
             for videoname in os.listdir(p):
                v = os.path.join(p, videoname) 
-               uploader = PanoptoUploader('test-tu-darmstadt.cloud.panopto.eu', True, oauth2, videoname, "Ein TestVideo")
+               uploader = PanoptoUploader('test-tu-darmstadt.cloud.panopto.eu', True, oauth2, videoname, "Ein TestVideo", "C:/Users/Abdulhaq/.spyder-py3/FachbereichsOrdner")
                uploader.upload_video(v, playlistDirectoryID)
             respVideos = requests_session.get("https://test-tu-darmstadt.cloud.panopto.eu/Panopto/api/v1/folders/{0}/sessions".format(playlistDirectoryID))
             respVideosJson = respVideos.json()
