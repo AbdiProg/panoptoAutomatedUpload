@@ -11,10 +11,10 @@ import boto3  # AWS SDK (boto3)
 PART_SIZE = 20 * 1024 * 1024
 
 # Template for manifest XML file.
-MANIFEST_FILE_TEMPLATE = 'upload_manifest_template.xml'
+MANIFEST_FILE_TEMPLATE = 'VideoMetadataXML/upload_manifest_template.xml'
 
 # Filename of manifest XML file. Any filename is acceptable.
-MANIFEST_FILE_NAME = 'upload_manifest_generated.xml'
+MANIFEST_FILE_NAME = 'VideoMetadataXML/upload_manifest_generated.xml'
 
 
 class PanoptoUploader:
