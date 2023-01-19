@@ -5,17 +5,12 @@ Created on Tue Jan 17 10:48:32 2023
 @author: Abdulhaq
 """
 
-import argparse
-from panopto_oauth2 import PanoptoOAuth2
-from panopto_uploaderConstruct import PanoptoUploader
-import urllib3
+from UploadAndAuthentification_Algo.panopto_oauth2 import PanoptoOAuth2
+from UploadAndAuthentification_Algo.panopto_uploaderConstruct import PanoptoUploader
 import requests
 import os
-import json
 
-
-
-older_id = 'a901d04f-1915-477c-ace3-af5700a74577' 
+older_id = 'a901d04f-1915-477c-ace3-af5700a74577'
     
 client_id = '5aff5849-cfaa-4176-8a79-af82009b4df3'
 
@@ -79,9 +74,9 @@ def createFoldersWithAPI(directory, parentPanoptoID):
          print(responseJson['Id'])
 
 
-directoryPanoptoID = "b73dd194-dea3-47ff-ba34-af8d00c7e113"
-respVideos = requests_session.get("https://test-tu-darmstadt.cloud.panopto.eu/Panopto/api/v1/folders/{0}/sessions".format(directoryPanoptoID))
-respVideosJson = respVideos.json()
+#directoryPanoptoID = "b73dd194-dea3-47ff-ba34-af8d00c7e113"
+#respVideos = requests_session.get("https://test-tu-darmstadt.cloud.panopto.eu/Panopto/api/v1/folders/{0}/sessions".format(directoryPanoptoID))
+#respVideosJson = respVideos.json()
 #print(respVideosJson['Results'][0]['Id'])
 #arr = ['148ff6b9-ee12-4880-86ba-af8d00cf13a9', 'f724926d-88fa-4002-a79d-af8d00cebb88']
 #payload = {'Name': 'AutomatedPlaylist', 'Description': 'Automatisch erstellte Playlist', 'FolderId': 'b04899dd-a47a-461c-b9a4-af8d00cea5c5', 
@@ -91,5 +86,5 @@ respVideosJson = respVideos.json()
 #response2 = requests_session.delete('https://test-tu-darmstadt.cloud.panopto.eu/Panopto/api/v1/playlists/36fe73c2-4718-45c9-9c08-af8d00cf4377')
 
 
-#createFoldersWithAPI(directory, parentPanoptoID)
+createFoldersWithAPI(directory, parentPanoptoID)
          

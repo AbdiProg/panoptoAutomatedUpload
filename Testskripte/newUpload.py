@@ -1,8 +1,7 @@
 #!python3
 import argparse
-from panopto_oauth2 import PanoptoOAuth2
-from panopto_uploaderConstruct import PanoptoUploader
-import urllib3
+from UploadAndAuthentification_Algo.panopto_oauth2 import PanoptoOAuth2
+from UploadAndAuthentification_Algo.panopto_uploaderConstruct import PanoptoUploader
 
 
 def parse_argument():
@@ -37,7 +36,7 @@ def main():
     
     client_secret = 'R9d8ao5bM+BjWWpzcANElnVUZz3jP1ixH4OUHOpn5c0='
     
-    upload_file = 'testvideo.mp4'
+    upload_file = '../testvideo.mp4'
     
     videoTitle = input("Geben Sie den Videotitel an: ")
     videoDescription = input("Geben Sie die Videobeschreibung an: ")

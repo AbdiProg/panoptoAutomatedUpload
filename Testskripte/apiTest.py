@@ -1,8 +1,6 @@
 #!python3
 import argparse
-from panopto_oauth2 import PanoptoOAuth2
-from panopto_uploaderConstruct import PanoptoUploader
-import urllib3
+from UploadAndAuthentification_Algo.panopto_oauth2 import PanoptoOAuth2
 import requests
 import os
 
