@@ -9,7 +9,8 @@ urls = {
     'collection': '/collection-detailview/index/',
     'resources': '/resource-overview/filter/index/all?deleted=false',
     'rawFiles': 'https://olw-material.hrz.tu-darmstadt.de/olw-roh-repository/archive/',
-    'convFiles': 'https://olw-material.hrz.tu-darmstadt.de/olw-kov-repository/material/',
+    'convFiles': 'https://olw-material.hrz.tu-darmstadt.de/olw-konv-repository/material/',
+
 }
 
 
@@ -25,15 +26,19 @@ def get_resources():
 
 resources = [r for r in get_resources() if not r['deleted'] and r['name']]
 
+resourcesArray = []
+
 for r in resources:
     uuidPath = '/'.join(wrap(r['uuid'].replace('-', ''), 2))
     resource = {'name': f'{r["name"]}',
                 'description': f'{r["description"]}',
                 'collection': f'{r["collections"]}',
+                'area': f'{r["areas"]}',
+                'code': f'{r["code"]}',
+                'semester': f'{r["semesters"]}',
                 'rawFileDir': f'{urls["rawFiles"]}{uuidPath}',
                 'convFileDir': f'{urls["convFiles"]}{uuidPath}',
-
                 }
-    print(resource)
-
-print(len(resources))
+    resourcesArray.append(resource.get("convFileDir"))
+print(json.dumps(resources, indent = 4, sort_keys=True))
+print(resourcesArray)

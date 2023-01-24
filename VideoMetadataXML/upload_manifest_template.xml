@@ -11,4 +11,10 @@
       <Type>Primary</Type>
     </Video>
   </Videos>
+  <Attachments>
+    <Attachment>
+    <File>{Presentationname}</File>
+    <MimeType>{MimeType}</MimeType>
+    </Attachment>
+  </Attachments>	
 </Session>

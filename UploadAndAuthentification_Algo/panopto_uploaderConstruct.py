@@ -11,10 +11,10 @@ import boto3  # AWS SDK (boto3)
 PART_SIZE = 20 * 1024 * 1024
 
 # Template for manifest XML file.
-MANIFEST_FILE_TEMPLATE = 'VideoMetadataXML/upload_manifest_template.xml'
+MANIFEST_FILE_TEMPLATE = 'C:/Users/Abdulhaq/PycharmProjects/panoptoProjekt/VideoMetadataXML/upload_manifest_template.xml'
 
 # Filename of manifest XML file. Any filename is acceptable.
-MANIFEST_FILE_NAME = 'VideoMetadataXML/upload_manifest_generated.xml'
+MANIFEST_FILE_NAME = 'upload_manifest_generated.xml'
 
 
 class PanoptoUploader:
@@ -69,7 +69,7 @@ class PanoptoUploader:
         # Throw unhandled cases.
         response.raise_for_status()
 
-    def upload_video(self, file_path, folder_id):
+    def upload_video(self, file_path, pdffile_path,folder_id):
         '''
         Main upload method to go through all required steps.
         '''
@@ -77,12 +77,15 @@ class PanoptoUploader:
         session_upload = self.__create_session(folder_id)
         upload_id = session_upload['ID']
         upload_target = session_upload['UploadTarget']
-
+        print("Eine wichtige JSON: ")
+        print(session_upload)
         # step 2 - upload the video file
-        self.__multipart_upload_single_file(upload_target, file_path)
 
+        self.__multipart_upload_single_file(upload_target, file_path)
+        self.__multipart_upload_single_file(upload_target, pdffile_path)
+        
         # step 3 - create manifest file and uplaod it
-        self.__create_manifest_for_video(file_path, MANIFEST_FILE_NAME)
+        self.__create_manifest_for_video(file_path, pdffile_path, MANIFEST_FILE_NAME)
         self.__multipart_upload_single_file(upload_target, MANIFEST_FILE_NAME)
 
         # step 4 - finish the upload
@@ -165,7 +168,7 @@ class PanoptoUploader:
                                               MultipartUpload={"Parts": parts})
         print('  -- complete called.')
 
-    def __create_manifest_for_video(self, file_path, manifest_file_name):
+    def __create_manifest_for_video(self, file_path, pdffile_path, manifest_file_name):
         '''
         Create manifest XML file for a single video file, based on template.
         '''
@@ -173,6 +176,7 @@ class PanoptoUploader:
         print('Writing manifest file: {0}'.format(manifest_file_name))
 
         file_name = os.path.basename(file_path)
+        pdffile_name = os.path.basename(pdffile_path)
 
         with open(MANIFEST_FILE_TEMPLATE) as fr:
             template = fr.read()
@@ -180,7 +184,9 @@ class PanoptoUploader:
             .replace('{Title}', self.videoTitle) \
             .replace('{Description}', self.videoDescription) \
             .replace('{Filename}', file_name) \
-            .replace('{Date}', datetime.now().strftime("%Y-%m-%dT%H:%M:%S.%f-00:00") )
+            .replace('{Date}', datetime.now().strftime("%Y-%m-%dT%H:%M:%S.%f-00:00") ) \
+            .replace('{Presentationname}', pdffile_name) \
+            .replace('{MimeType}', "pdf")
         with codecs.open(manifest_file_name, 'w', 'utf-8') as fw:
             fw.write(content)
         
@@ -201,7 +207,7 @@ class PanoptoUploader:
             payload['State'] = 1  # Upload Completed
             headers = {'content-type': 'application/json'}
             resp = self.requests_session.put(url=url, json=payload, headers=headers)
-            print('test!')
+            #print('test!')
             print(resp.json())
             if not self.__inspect_response_is_retry_needed(resp):
                 break
