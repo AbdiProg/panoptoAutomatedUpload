@@ -1,11 +1,15 @@
 #!python3
 import os
+import urllib
+from urllib.parse import urlparse
+
 import requests
 import codecs
 import time
 from datetime import datetime
 import copy
 import boto3  # AWS SDK (boto3)
+
 # Size of each part of multipart upload.
 # This must be between 5MB and 25MB. Panopto server may fail if the size is more than 25MB.
 PART_SIZE = 20 * 1024 * 1024
@@ -69,7 +73,7 @@ class PanoptoUploader:
         # Throw unhandled cases.
         response.raise_for_status()
 
-    def upload_video(self, file_path, pdffile_path,folder_id):
+    def upload_video(self, file_path, pdffile_path, folder_id):
         '''
         Main upload method to go through all required steps.
         '''
@@ -77,13 +81,13 @@ class PanoptoUploader:
         session_upload = self.__create_session(folder_id)
         upload_id = session_upload['ID']
         upload_target = session_upload['UploadTarget']
-        print("Eine wichtige JSON: ")
-        print(session_upload)
-        # step 2 - upload the video file
 
+        # step 2 - upload the video file
+        print("TestTest")
+        print(file_path)
         self.__multipart_upload_single_file(upload_target, file_path)
         self.__multipart_upload_single_file(upload_target, pdffile_path)
-        
+
         # step 3 - create manifest file and uplaod it
         self.__create_manifest_for_video(file_path, pdffile_path, MANIFEST_FILE_NAME)
         self.__multipart_upload_single_file(upload_target, MANIFEST_FILE_NAME)
@@ -125,7 +129,13 @@ class PanoptoUploader:
         service_endpoint = '/'.join(elements[0:-2:])
         bucket = elements[-2]
         prefix = elements[-1]
-        object_key = '{0}/{1}'.format(prefix, os.path.basename(file_path))
+        #Neuer Code mit URL Handhabung!
+        pathBehindURL = urlparse(file_path)
+        file_path2 = pathBehindURL.path
+        #if file_path.__contains__("http"):
+       #     pathBehindURL = urlparse(file_path)
+       #     file_path = pathBehindURL.path
+        object_key = '{0}/{1}'.format(prefix, os.path.basename(file_path2))
 
         print('')
         print('Upload {0} with multipart upload protocol'.format(file_path))
@@ -148,9 +158,15 @@ class PanoptoUploader:
         mpu_id = mpu['UploadId']
 
         # Iterate through parts
+        print(file_path)
+        req = urllib.request.Request(file_path,
+                                          method='HEAD')
+        f = urllib.request.urlopen(req)
+
         parts = []
         uploaded_bytes = 0
-        total_bytes = os.stat(file_path).st_size
+        #total_bytes = os.stat(file_path).st_size
+        print(f.headers["Content-Length"])
         with open(file_path, 'rb') as f:
             i = 1
             while True:
@@ -180,16 +196,24 @@ class PanoptoUploader:
 
         with open(MANIFEST_FILE_TEMPLATE) as fr:
             template = fr.read()
-        content = template \
-            .replace('{Title}', self.videoTitle) \
-            .replace('{Description}', self.videoDescription) \
-            .replace('{Filename}', file_name) \
-            .replace('{Date}', datetime.now().strftime("%Y-%m-%dT%H:%M:%S.%f-00:00") ) \
-            .replace('{Presentationname}', pdffile_name) \
-            .replace('{MimeType}', "pdf")
+            content = ""
+            if pdffile_path == "":
+                content = template \
+                    .replace('{Title}', self.videoTitle) \
+                    .replace('{Description}', self.videoDescription) \
+                    .replace('{Filename}', file_name) \
+                    .replace('{Date}', datetime.now().strftime("%Y-%m-%dT%H:%M:%S.%f-00:00")) \
+                    .replace('{Presentationname}', pdffile_name) \
+                    .replace('{MimeType}', "pdf")
+            else:
+                content = template \
+                    .replace('{Title}', self.videoTitle) \
+                    .replace('{Description}', self.videoDescription) \
+                    .replace('{Filename}', file_name) \
+                    .replace('{Date}', datetime.now().strftime("%Y-%m-%dT%H:%M:%S.%f-00:00"))
+
         with codecs.open(manifest_file_name, 'w', 'utf-8') as fw:
             fw.write(content)
-        
 
     def __finish_upload(self, session_upload):
         '''
@@ -207,7 +231,7 @@ class PanoptoUploader:
             payload['State'] = 1  # Upload Completed
             headers = {'content-type': 'application/json'}
             resp = self.requests_session.put(url=url, json=payload, headers=headers)
-            #print('test!')
+            # print('test!')
             print(resp.json())
             if not self.__inspect_response_is_retry_needed(resp):
                 break
