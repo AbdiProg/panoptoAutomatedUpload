@@ -38,7 +38,7 @@ for r in resources:
     uuidPath = '/'.join(wrap(r['uuid'].replace('-', ''), 2))
     resource = {'name': f'{r["name"]}',
                 'description': f'{r["description"]}',
-                'author': f'{r["users"][0]["firstName"]}',
+                '''''author': f'{r["users"][0]["firstName"]}','''
                 'collection': f'{r["collections"]}',
                 'rawFileDir': f'{urls["rawFiles"]}{uuidPath}',
                 'convFileDir': f'{urls["convFiles"]}{uuidPath}',
