@@ -165,7 +165,7 @@ class PanoptoUploader:
 
         parts = []
         uploaded_bytes = 0
-        #total_bytes = os.stat(file_path).st_size
+        total_bytes = os.stat(file_path).st_size
         print(f.headers["Content-Length"])
         with open(file_path, 'rb') as f:
             i = 1

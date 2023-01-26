@@ -23,4 +23,4 @@ class UploadFromOLW:
                                           "EineBeispielBeschreibung")
         fileChooser = FileChooser(url,"https://olw-material.hrz.tu-darmstadt.de")
         print("Tfgdfgdfg",fileChooser.getOptimalVideoLink())
-       # panoptoUploader.upload_video(fileChooser.getOptimalVideoLink(), "", panoptoFolderID)
+        panoptoUploader.upload_video(fileChooser.getOptimalVideoLink(), "", panoptoFolderID)
