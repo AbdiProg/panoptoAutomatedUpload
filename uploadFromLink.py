@@ -24,3 +24,6 @@ class UploadFromOLW:
         fileChooser = FileChooser(url, main_url)
 
         panoptoUploader.upload_video(fileChooser.getOptimalVideoLink(), "", panoptoFolderID)
+
+    def findDestinationFolderOnPanopto(self, metaFolderID):
+        """TODO"""
