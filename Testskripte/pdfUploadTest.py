@@ -1,6 +1,6 @@
 #Uploadtest with PDF-Slides
-from UploadAndAuthentification_Algo.panopto_oauth2 import PanoptoOAuth2
-from UploadAndAuthentification_Algo.panopto_uploaderConstruct import PanoptoUploader
+from UploadAndAuthentificationPanopto_Algo.panopto_oauth2 import PanoptoOAuth2
+from UploadAndAuthentificationPanopto_Algo.panopto_uploaderConstruct import PanoptoUploader
 
 
 client_id = '5aff5849-cfaa-4176-8a79-af82009b4df3'

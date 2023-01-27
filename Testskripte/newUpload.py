@@ -1,7 +1,7 @@
 #!python3
 import argparse
-from UploadAndAuthentification_Algo.panopto_oauth2 import PanoptoOAuth2
-from UploadAndAuthentification_Algo.panopto_uploaderConstruct import PanoptoUploader
+from UploadAndAuthentificationPanopto_Algo.panopto_oauth2 import PanoptoOAuth2
+from UploadAndAuthentificationPanopto_Algo.panopto_uploaderConstruct import PanoptoUploader
 
 
 def parse_argument():

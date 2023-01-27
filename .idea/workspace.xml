@@ -5,13 +5,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cc90bc2e-1463-4020-91bb-d67006a6d158" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/UploadAndAuthentificationPanopto_Algo/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scratch.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/panoptoAutomatedUpload.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/panoptoAutomatedUpload.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/export.py" beforeDir="false" afterPath="$PROJECT_DIR$/export.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testskripte/FileChooserTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/Testskripte/FileChooserTest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testskripte/apiTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/Testskripte/apiTest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testskripte/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Testskripte/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testskripte/newUpload.py" beforeDir="false" afterPath="$PROJECT_DIR$/Testskripte/newUpload.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testskripte/pdfUploadTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/Testskripte/pdfUploadTest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testskripte/token_test-tu-darmstadt.cloud.panopto.eu_5aff5849-cfaa-4176-8a79-af82009b4df3.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Testskripte/token_test-tu-darmstadt.cloud.panopto.eu_5aff5849-cfaa-4176-8a79-af82009b4df3.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testskripte/upload.py" beforeDir="false" afterPath="$PROJECT_DIR$/Testskripte/upload.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testskripte/upload_manifest_generated.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Testskripte/upload_manifest_generated.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/FileChooser.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tools/FileChooser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UploadAndAuthentification_Algo/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/ExportAsCSV_Algo/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UploadAndAuthentification_Algo/panopto_oauth2.py" beforeDir="false" afterPath="$PROJECT_DIR$/UploadAndAuthentificationPanopto_Algo/panopto_oauth2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UploadAndAuthentification_Algo/panopto_uploaderConstruct.py" beforeDir="false" afterPath="$PROJECT_DIR$/UploadAndAuthentificationPanopto_Algo/panopto_uploaderConstruct.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VideoMetadataXML/upload_manifest_template.xml" beforeDir="false" afterPath="$PROJECT_DIR$/VideoMetadataXML/upload_manifest_template.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/export.py" beforeDir="false" afterPath="$PROJECT_DIR$/ExportAsCSV_Algo/export.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/panoptoAPIUpload.py" beforeDir="false" afterPath="$PROJECT_DIR$/Testskripte/panoptoAPIUpload.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploadFromLink.py" beforeDir="false" afterPath="$PROJECT_DIR$/uploadFromLink.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="FlaskConsoleOptions" custom-start-script="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))">
     <envs>
@@ -37,6 +63,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File" value="Markdown" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../OneDrive - stud.tu-darmstadt.de/Lehre und Arbeit/HRZ Hiwi/OLW Panopto/export.py" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -44,7 +71,14 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.export (1)">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Abdulhaq\PycharmProjects\panoptoProjekt" />
+      <recent name="C:\Users\Abdulhaq\PycharmProjects\panoptoProjekt\Testskripte" />
+      <recent name="C:\Users\Abdulhaq\PycharmProjects\panoptoProjekt\ExportAsCSV_Algo" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.export (2)">
     <configuration name="export (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="panoptoAutomatedUpload" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -67,6 +101,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="export (2)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="panoptoAutomatedUpload" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ExportAsCSV_Algo" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ExportAsCSV_Algo/export.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="export" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="panoptoAutomatedUpload" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -80,7 +135,28 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/export.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\Abdulhaq\PycharmProjects\panoptoProjekt\ExportAsCSV_Algo\export.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="panoptoAutomatedUpload" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Testskripte" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Testskripte/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -111,57 +187,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="newUpload (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="panoptoAutomatedUpload" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Testskripte" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Testskripte/newUpload.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="newUpload" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="panoptoAutomatedUpload" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/newUpload.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.export (2)" />
+        <item itemvalue="Python.main (1)" />
+        <item itemvalue="Python.main" />
         <item itemvalue="Python.export (1)" />
         <item itemvalue="Python.export" />
-        <item itemvalue="Python.newUpload (1)" />
-        <item itemvalue="Python.newUpload" />
-        <item itemvalue="Python.main" />
       </list>
     </recent_temporary>
   </component>
@@ -185,11 +217,16 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/panoptoAutomatedUpload$export__1_.coverage" NAME="export (1) Coverage Results" MODIFIED="1674735173784" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../OneDrive - stud.tu-darmstadt.de/Lehre und Arbeit/HRZ Hiwi/OLW Panopto" />
-    <SUITE FILE_PATH="coverage/panoptoAutomatedUpload$newUpload.coverage" NAME="newUpload Coverage Results" MODIFIED="1674123926305" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/panoptoAutomatedUpload$newUpload__1_.coverage" NAME="newUpload (1) Coverage Results" MODIFIED="1674125089704" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Testskripte" />
-    <SUITE FILE_PATH="coverage/panoptoAutomatedUpload$export.coverage" NAME="export Coverage Results" MODIFIED="1674210230485" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/panoptoAutomatedUpload$main.coverage" NAME="main Coverage Results" MODIFIED="1674123878558" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

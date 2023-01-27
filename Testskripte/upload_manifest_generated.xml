@@ -1,20 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Session xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://tempuri.org/UniversalCaptureSpecification/v1">
-  <Title>TestVideoMitPDF</Title>
-  <Description>TestVideoMitPDF</Description>
-  <Date>2023-01-24T11:49:09.018665-00:00</Date>
+  <Title>EinBeispielTitel</Title>
+  <Description>EineBeispielBeschreibung</Description>
+  <Date>2023-01-26T13:44:45.814087-00:00</Date>
   <ThumbnailTime>PT5S</ThumbnailTime>
   <Videos>
     <Video>
       <Start>PT0S</Start>
-      <File>testvideo.mp4</File>
+      <File>3.mp4</File>
       <Type>Primary</Type>
     </Video>
-  </Videos>
-  <Attachments>
-    <Attachment>
-    <File>tuda_logo.pdf</File>
-    <MimeType>pdf</MimeType>
-    </Attachment>
-  </Attachments>	
+  </Videos>	
 </Session>

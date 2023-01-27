@@ -2,7 +2,7 @@ import requests
 import os
 from bs4 import BeautifulSoup
 
-from UploadAndAuthentification_Algo.panopto_uploaderConstruct import PanoptoUploader
+from UploadAndAuthentificationPanopto_Algo.panopto_uploaderConstruct import PanoptoUploader
 
 url = "https://olw-material.hrz.tu-darmstadt.de/olw-konv-repository/material/e6/1d/69/70/01/e1/11/ed/87/6c/00/50/56/bd/73/ae"
 

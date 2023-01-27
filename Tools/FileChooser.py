@@ -2,7 +2,7 @@ import requests
 import os
 from bs4 import BeautifulSoup
 
-from UploadAndAuthentification_Algo.panopto_uploaderConstruct import PanoptoUploader
+from UploadAndAuthentificationPanopto_Algo.panopto_uploaderConstruct import PanoptoUploader
 
 import requests
 import os
