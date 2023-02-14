@@ -10,13 +10,14 @@ import time
 from datetime import datetime
 import copy
 import boto3  # AWS SDK (boto3)
+from pathlib import Path
 
 # Size of each part of multipart upload.
 # This must be between 5MB and 25MB. Panopto server may fail if the size is more than 25MB.
 PART_SIZE = 20 * 1024 * 1024
 
 # Template for manifest XML file.
-MANIFEST_FILE_TEMPLATE = 'C:/Users/Abdulhaq/PycharmProjects/panoptoProjekt/VideoMetadataXML/upload_manifest_template.xml'
+MANIFEST_FILE_TEMPLATE = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'VideoMetadataXML','upload_manifest_template.xml').replace("\\","/")
 #MANIFEST_FILE_TEMPLATE = 'C:/Users/Abdulhaq/PycharmProjects/panoptoProjekt/VideoMetadataXML/upload_manifest_template_withoutpdf.xml'
 
 # Filename of manifest XML file. Any filename is acceptable.
@@ -113,8 +114,13 @@ class PanoptoUploader:
                 break
 
         session_upload = resp.json()
+        print(session_upload)
         print('  ID: {0}'.format(session_upload['ID']))
         print('  target: {0}'.format(session_upload['UploadTarget']))
+
+        #!!!!!!!!!!!!!!!!!!!!!!!
+        #hier fehlt eine Zeile, welche war das?
+
         return session_upload
 
     def __multipart_upload_single_fileBYURL(self, upload_target, file_path):
@@ -283,6 +289,7 @@ class PanoptoUploader:
         upload_id = session_upload['ID']
         upload_target = session_upload['UploadTarget']
 
+
         print('')
         while True:
             print('Calling PUT PublicAPI/REST/sessionUpload/{0} endpoint'.format(upload_id))
@@ -313,7 +320,11 @@ class PanoptoUploader:
                 # If we get Unauthorized and token is refreshed, ignore the response at this time and wait for next time.
                 continue
             session_upload = resp.json()
+
             print('  State: {0}'.format(session_upload['State']))
 
-            if session_upload['State'] == 4:  # Complete
+            if session_upload['State'] == 4:
+                sessionID = session_upload['SessionId']
+                print(sessionID)
+                # Complete
                 break

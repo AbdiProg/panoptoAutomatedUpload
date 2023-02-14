@@ -16,7 +16,7 @@ client_id = '5aff5849-cfaa-4176-8a79-af82009b4df3'
 
 client_secret = 'R9d8ao5bM+BjWWpzcANElnVUZz3jP1ixH4OUHOpn5c0='
 
-#upload_file = 'testvideo.mp4'
+upload_file = 'testvideo.mp4'
 
 
 oauth2 = PanoptoOAuth2('test-tu-darmstadt.cloud.panopto.eu', client_id, client_secret, True)

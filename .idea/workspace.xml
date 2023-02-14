@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cc90bc2e-1463-4020-91bb-d67006a6d158" name="Changes" comment="Arbeitsplan überarbeitet." />
+    <list default="true" id="cc90bc2e-1463-4020-91bb-d67006a6d158" name="Changes" comment="Skripts umsortiert und neue Ordner geschaffen.&#10;&#10;Arbeitsplan aka. die nächsten Schritte festgelegt.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Arbeitsplan.md" beforeDir="false" afterPath="$PROJECT_DIR$/Arbeitsplan.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploadFromLink.py" beforeDir="false" afterPath="$PROJECT_DIR$/uploadFromLink.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -200,14 +204,7 @@
       <option name="project" value="LOCAL" />
       <updated>1674824070656</updated>
     </task>
-    <task id="LOCAL-00002" summary="Arbeitsplan überarbeitet.">
-      <created>1676372911540</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1676372911540</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -228,7 +225,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Skripts umsortiert und neue Ordner geschaffen.&#10;&#10;Arbeitsplan aka. die nächsten Schritte festgelegt." />
-    <MESSAGE value="Arbeitsplan überarbeitet." />
-    <option name="LAST_COMMIT_MESSAGE" value="Arbeitsplan überarbeitet." />
+    <option name="LAST_COMMIT_MESSAGE" value="Skripts umsortiert und neue Ordner geschaffen.&#10;&#10;Arbeitsplan aka. die nächsten Schritte festgelegt." />
   </component>
 </project>
