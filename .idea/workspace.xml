@@ -4,10 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cc90bc2e-1463-4020-91bb-d67006a6d158" name="Changes" comment="Skripts umsortiert und neue Ordner geschaffen.&#10;&#10;Arbeitsplan aka. die nächsten Schritte festgelegt.">
+    <list default="true" id="cc90bc2e-1463-4020-91bb-d67006a6d158" name="Changes" comment="Arbeitsplan überarbeitet.">
+      <change afterPath="$PROJECT_DIR$/folderNameExtraction.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mainTest.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordnerstruktur.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/panoptoFolderStructureCreation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/panoptoAutomatedUpload.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/panoptoAutomatedUpload.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Arbeitsplan.md" beforeDir="false" afterPath="$PROJECT_DIR$/Arbeitsplan.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploadFromLink.py" beforeDir="false" afterPath="$PROJECT_DIR$/uploadFromLink.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExportAsCSV_Algo/export.py" beforeDir="false" afterPath="$PROJECT_DIR$/ExportAsCSV_Algo/export.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExportAsCSV_Algo/mycsvfile.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExportAsCSV_Algo/mycsvfile.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExportAsCSV_Algo/olw_ressources.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExportAsCSV_Algo/olw_ressources.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testskripte/panoptoAPIUpload.py" beforeDir="false" afterPath="$PROJECT_DIR$/Testskripte/panoptoAPIUpload.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mycsvfile.csv" beforeDir="false" afterPath="$PROJECT_DIR$/OtherCSVData/mycsvfile.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/olw_ressources.csv" beforeDir="false" afterPath="$PROJECT_DIR$/OtherCSVData/olw_ressources.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/olw_ressources_1_Beitrag.csv" beforeDir="false" afterPath="$PROJECT_DIR$/OtherCSVData/olw_ressources_1_Beitrag.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/token_test-tu-darmstadt.cloud.panopto.eu_5aff5849-cfaa-4176-8a79-af82009b4df3.cache" beforeDir="false" afterPath="$PROJECT_DIR$/token_test-tu-darmstadt.cloud.panopto.eu_5aff5849-cfaa-4176-8a79-af82009b4df3.cache" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +59,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="ToolWindowEvent Log.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File" value="Markdown" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../OneDrive - stud.tu-darmstadt.de/Lehre und Arbeit/HRZ Hiwi/OLW Panopto/export.py" />
@@ -58,34 +71,13 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Abdulhaq\PycharmProjects\panoptoProjekt\OtherCSVData" />
       <recent name="C:\Users\Abdulhaq\PycharmProjects\panoptoProjekt" />
       <recent name="C:\Users\Abdulhaq\PycharmProjects\panoptoProjekt\Testskripte" />
       <recent name="C:\Users\Abdulhaq\PycharmProjects\panoptoProjekt\ExportAsCSV_Algo" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.export (2)">
-    <configuration name="export (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="panoptoAutomatedUpload" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../OneDrive - stud.tu-darmstadt.de/Lehre und Arbeit/HRZ Hiwi/OLW Panopto" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../OneDrive - stud.tu-darmstadt.de/Lehre und Arbeit/HRZ Hiwi/OLW Panopto/export.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.mainTest">
     <configuration name="export (2)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="panoptoAutomatedUpload" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -107,7 +99,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="export" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="folderNameExtraction (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="panoptoAutomatedUpload" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -119,8 +111,28 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\Users\Abdulhaq\PycharmProjects\panoptoProjekt\ExportAsCSV_Algo\export.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/folderNameExtraction.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="folderNameExtraction" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="panoptoAutomatedUpload" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="C:\Users\Abdulhaq\PycharmProjects\panoptoProjekt\folderNameExtraction.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -150,7 +162,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="mainTest" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="panoptoAutomatedUpload" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -162,8 +174,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mainTest.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -174,11 +185,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.mainTest" />
+        <item itemvalue="Python.folderNameExtraction (1)" />
+        <item itemvalue="Python.folderNameExtraction" />
         <item itemvalue="Python.export (2)" />
         <item itemvalue="Python.main (1)" />
-        <item itemvalue="Python.main" />
-        <item itemvalue="Python.export (1)" />
-        <item itemvalue="Python.export" />
       </list>
     </recent_temporary>
   </component>
@@ -204,7 +215,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674824070656</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Arbeitsplan überarbeitet.">
+      <created>1676373426084</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1676373426084</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -225,6 +243,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Skripts umsortiert und neue Ordner geschaffen.&#10;&#10;Arbeitsplan aka. die nächsten Schritte festgelegt." />
-    <option name="LAST_COMMIT_MESSAGE" value="Skripts umsortiert und neue Ordner geschaffen.&#10;&#10;Arbeitsplan aka. die nächsten Schritte festgelegt." />
+    <MESSAGE value="Arbeitsplan überarbeitet." />
+    <option name="LAST_COMMIT_MESSAGE" value="Arbeitsplan überarbeitet." />
   </component>
 </project>

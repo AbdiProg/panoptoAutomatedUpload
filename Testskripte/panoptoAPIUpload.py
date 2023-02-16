@@ -14,7 +14,7 @@ older_id = 'a901d04f-1915-477c-ace3-af5700a74577'
     
 client_id = '5aff5849-cfaa-4176-8a79-af82009b4df3'
 
-client_secret = 'R9d8ao5bM+BjWWpzcANElnVUZz3jP1ixH4OUHOpn5c0='
+client_secret = 'S3Ndzc9QEU52PUuTxbctEz6H014LnLkIuaqmW/5xFWU='
 
 upload_file = 'testvideo.mp4'
 

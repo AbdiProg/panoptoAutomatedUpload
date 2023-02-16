@@ -32,7 +32,7 @@ def get_resources():
 
 resources = [r for r in get_resources() if not r['deleted'] and r['name']]
 
-#print(json.dumps(resources, indent=10, sort_keys=True))
+print(json.dumps(resources, indent=10, sort_keys=True))
 
 for r in resources:
     uuidPath = '/'.join(wrap(r['uuid'].replace('-', ''), 2))
@@ -50,7 +50,7 @@ for r in resources:
     #vielleicht packen wir den Uploader direkt hier rein?
     #Der Upload link wird ja sowieso über die convFileDir erstellt. Dann können wir hier direkt die Daten für den iFrame abrufen
 
-    print(resource)
+   # print(resource)
 
 
     #writes all metadata in csv table
