@@ -1,5 +1,6 @@
 import folderNameExtraction
 from UploadAndAuthentificationPanopto_Algo.panopto_oauth2 import PanoptoOAuth2
+from panoptoDestinationFolderFinder import PanoptoFolderFinder
 from panoptoFolderStructureCreation import FolderStructureCreation
 from uploadFromLink import UploadFromOLW
 
@@ -23,6 +24,11 @@ identifiers = folderNameExtraction.returnArrayForFolderNameIdentification()
 metaFolderID = "ddce8d57-fcaa-402a-a1d1-afa900ec97d4"
 
 
-folderStructure = FolderStructureCreation(metaFolderID, identifiers, oauth2)
+#folderStructure = FolderStructureCreation(metaFolderID, identifiers, oauth2)
 
-folderStructure.createFolderStructureInPanopto()
+#folderStructure.createFolderStructureInPanopto()
+
+finder = PanoptoFolderFinder(metaFolderID,oauth2)
+
+
+print(finder.findDestinationFolderByString("Philosophie","SoSe 2020"))

@@ -31,6 +31,7 @@ class FileChooser:
         self.r = requests.get(self.url)
         self.soup = BeautifulSoup(self.r.text, 'html.parser')
         self.parent = [node.get('href') for node in self.soup.find_all('a')]
+
     # This method searches for the optimal video with the best quality provided by the website
     # The website is called with an url
     def getOptimalVideoLink(self):

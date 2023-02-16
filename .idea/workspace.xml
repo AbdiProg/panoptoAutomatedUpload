@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cc90bc2e-1463-4020-91bb-d67006a6d158" name="Changes" comment="1.) Algorithmus zur Ordnerstruktur Erstellung hinzugefügt (siehe folderNameExtraction.py und panoptoFolderStructureCreation.py.">
+    <list default="true" id="cc90bc2e-1463-4020-91bb-d67006a6d158" name="Changes" comment="1.) Beispielvideo testvideo.mp4 und Beispielpdf tuda_logo.pdf in einen Assets Ordner geschoben zur Herstellung von Übersichtlichtkeit.">
+      <change afterPath="$PROJECT_DIR$/panoptoDestinationFolderFinder.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Testskripte/pdfUploadTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/Testskripte/pdfUploadTest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testvideo.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/testvideo.mp4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tuda_logo.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/tuda_logo.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Arbeitsplan.md" beforeDir="false" afterPath="$PROJECT_DIR$/Arbeitsplan.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/FileChooser.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tools/FileChooser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainTest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/token_test-tu-darmstadt.cloud.panopto.eu_5aff5849-cfaa-4176-8a79-af82009b4df3.cache" beforeDir="false" afterPath="$PROJECT_DIR$/token_test-tu-darmstadt.cloud.panopto.eu_5aff5849-cfaa-4176-8a79-af82009b4df3.cache" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -219,7 +221,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676538124994</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="1.) Beispielvideo testvideo.mp4 und Beispielpdf tuda_logo.pdf in einen Assets Ordner geschoben zur Herstellung von Übersichtlichtkeit.">
+      <created>1676538227197</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1676538227197</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -242,6 +251,7 @@
     <MESSAGE value="Skripts umsortiert und neue Ordner geschaffen.&#10;&#10;Arbeitsplan aka. die nächsten Schritte festgelegt." />
     <MESSAGE value="Arbeitsplan überarbeitet." />
     <MESSAGE value="1.) Algorithmus zur Ordnerstruktur Erstellung hinzugefügt (siehe folderNameExtraction.py und panoptoFolderStructureCreation.py." />
-    <option name="LAST_COMMIT_MESSAGE" value="1.) Algorithmus zur Ordnerstruktur Erstellung hinzugefügt (siehe folderNameExtraction.py und panoptoFolderStructureCreation.py." />
+    <MESSAGE value="1.) Beispielvideo testvideo.mp4 und Beispielpdf tuda_logo.pdf in einen Assets Ordner geschoben zur Herstellung von Übersichtlichtkeit." />
+    <option name="LAST_COMMIT_MESSAGE" value="1.) Beispielvideo testvideo.mp4 und Beispielpdf tuda_logo.pdf in einen Assets Ordner geschoben zur Herstellung von Übersichtlichtkeit." />
   </component>
 </project>

@@ -1,11 +1,11 @@
 Noch ausstehende Aufgaben:
 
 
-1.) Ordnerstruktur erstellen.
+1.) Ordnerstruktur erstellen. (ERLEDIGT)
 
 2.) Methode erstellen. dass zu einer Ressource den passenden Zielordner auf Panopto ausfindig macht.
-    Diese Methode wird im Skript "uploadFromLink" programmiert.
 
+3.) Hochladen eines Videos in den passenden Zielordner
 
 Nützliche Links:
 
