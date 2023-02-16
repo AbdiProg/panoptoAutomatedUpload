@@ -4,22 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cc90bc2e-1463-4020-91bb-d67006a6d158" name="Changes" comment="Arbeitsplan überarbeitet.">
-      <change afterPath="$PROJECT_DIR$/folderNameExtraction.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mainTest.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ordnerstruktur.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/panoptoFolderStructureCreation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/panoptoAutomatedUpload.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/panoptoAutomatedUpload.iml" afterDir="false" />
+    <list default="true" id="cc90bc2e-1463-4020-91bb-d67006a6d158" name="Changes" comment="1.) Algorithmus zur Ordnerstruktur Erstellung hinzugefügt (siehe folderNameExtraction.py und panoptoFolderStructureCreation.py.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ExportAsCSV_Algo/export.py" beforeDir="false" afterPath="$PROJECT_DIR$/ExportAsCSV_Algo/export.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ExportAsCSV_Algo/mycsvfile.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExportAsCSV_Algo/mycsvfile.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ExportAsCSV_Algo/olw_ressources.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExportAsCSV_Algo/olw_ressources.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Testskripte/panoptoAPIUpload.py" beforeDir="false" afterPath="$PROJECT_DIR$/Testskripte/panoptoAPIUpload.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mycsvfile.csv" beforeDir="false" afterPath="$PROJECT_DIR$/OtherCSVData/mycsvfile.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/olw_ressources.csv" beforeDir="false" afterPath="$PROJECT_DIR$/OtherCSVData/olw_ressources.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/olw_ressources_1_Beitrag.csv" beforeDir="false" afterPath="$PROJECT_DIR$/OtherCSVData/olw_ressources_1_Beitrag.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/token_test-tu-darmstadt.cloud.panopto.eu_5aff5849-cfaa-4176-8a79-af82009b4df3.cache" beforeDir="false" afterPath="$PROJECT_DIR$/token_test-tu-darmstadt.cloud.panopto.eu_5aff5849-cfaa-4176-8a79-af82009b4df3.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testskripte/pdfUploadTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/Testskripte/pdfUploadTest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testvideo.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/testvideo.mp4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tuda_logo.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/tuda_logo.pdf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,6 +60,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Abdulhaq\PycharmProjects\panoptoProjekt\Assets" />
       <recent name="C:\Users\Abdulhaq\PycharmProjects\panoptoProjekt\OtherCSVData" />
       <recent name="C:\Users\Abdulhaq\PycharmProjects\panoptoProjekt" />
       <recent name="C:\Users\Abdulhaq\PycharmProjects\panoptoProjekt\Testskripte" />
@@ -222,7 +212,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676373426084</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="1.) Algorithmus zur Ordnerstruktur Erstellung hinzugefügt (siehe folderNameExtraction.py und panoptoFolderStructureCreation.py.">
+      <created>1676538124994</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1676538124994</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -244,6 +241,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Skripts umsortiert und neue Ordner geschaffen.&#10;&#10;Arbeitsplan aka. die nächsten Schritte festgelegt." />
     <MESSAGE value="Arbeitsplan überarbeitet." />
-    <option name="LAST_COMMIT_MESSAGE" value="Arbeitsplan überarbeitet." />
+    <MESSAGE value="1.) Algorithmus zur Ordnerstruktur Erstellung hinzugefügt (siehe folderNameExtraction.py und panoptoFolderStructureCreation.py." />
+    <option name="LAST_COMMIT_MESSAGE" value="1.) Algorithmus zur Ordnerstruktur Erstellung hinzugefügt (siehe folderNameExtraction.py und panoptoFolderStructureCreation.py." />
   </component>
 </project>

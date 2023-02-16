@@ -7,7 +7,7 @@ client_id = '5aff5849-cfaa-4176-8a79-af82009b4df3'
 
 client_secret = 'R9d8ao5bM+BjWWpzcANElnVUZz3jP1ixH4OUHOpn5c0='
 
-upload_file = 'C:/Users/Abdulhaq/PycharmProjects/panoptoProjekt/testvideo.mp4'
+upload_file = '/Assets/testvideo.mp4'
 upload_pdffile = 'C:/Users/Abdulhaq/PycharmProjects/panoptoProjekt/tuda_logo.pdf'
 folder_id = '3dc10920-7577-4c19-991c-af8d00e5cdd9'
 
