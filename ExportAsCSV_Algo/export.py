@@ -50,7 +50,7 @@ for r in resources:
     #vielleicht packen wir den Uploader direkt hier rein?
     #Der Upload link wird ja sowieso über die convFileDir erstellt. Dann können wir hier direkt die Daten für den iFrame abrufen
 
-   # print(resource)
+    print(resource)
 
 
     #writes all metadata in csv table

@@ -25,5 +25,4 @@ class UploadFromOLW:
 
         panoptoUploader.upload_video(fileChooser.getOptimalVideoLink(), "", panoptoFolderID)
 
-    def findDestinationFolderOnPanopto(self, metaFolderID):
-        """TODO"""
+

@@ -44,7 +44,6 @@ def returnArrayForFolderNameIdentification():
     semesters = []
 
     for r in resources:
-        uuidPath = '/'.join(wrap(r['uuid'].replace('-', ''), 2))
         if f'{r["areas"]}' != "[]":
             if not areas.__contains__(f'{r["areas"][0]["name"]}'):
                 areas.append(f'{r["areas"][0]["name"]}')

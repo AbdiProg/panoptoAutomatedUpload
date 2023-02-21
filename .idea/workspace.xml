@@ -4,13 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cc90bc2e-1463-4020-91bb-d67006a6d158" name="Changes" comment="1.) Beispielvideo testvideo.mp4 und Beispielpdf tuda_logo.pdf in einen Assets Ordner geschoben zur Herstellung von Übersichtlichtkeit.">
-      <change afterPath="$PROJECT_DIR$/panoptoDestinationFolderFinder.py" afterDir="false" />
+    <list default="true" id="cc90bc2e-1463-4020-91bb-d67006a6d158" name="Changes" comment="1.) Der Zielordner in Panopto lässt sich nun mithilfe von panoptoDestinationFolderFinder.py finden">
+      <change afterPath="$PROJECT_DIR$/LearningUnit.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lecture.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestCollection.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/organiseResources.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Arbeitsplan.md" beforeDir="false" afterPath="$PROJECT_DIR$/Arbeitsplan.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tools/FileChooser.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tools/FileChooser.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainTest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExportAsCSV_Algo/export.py" beforeDir="false" afterPath="$PROJECT_DIR$/ExportAsCSV_Algo/export.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExportAsCSV_Algo/mycsvfile.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExportAsCSV_Algo/mycsvfile.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExportAsCSV_Algo/olw_ressources.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExportAsCSV_Algo/olw_ressources.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/folderNameExtraction.py" beforeDir="false" afterPath="$PROJECT_DIR$/folderNameExtraction.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/token_test-tu-darmstadt.cloud.panopto.eu_5aff5849-cfaa-4176-8a79-af82009b4df3.cache" beforeDir="false" afterPath="$PROJECT_DIR$/token_test-tu-darmstadt.cloud.panopto.eu_5aff5849-cfaa-4176-8a79-af82009b4df3.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploadFromLink.py" beforeDir="false" afterPath="$PROJECT_DIR$/uploadFromLink.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +56,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="ToolWindowEvent Log.ShowToolbar" value="false" />
+    <property name="ToolWindowRun.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File" value="Markdown" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../OneDrive - stud.tu-darmstadt.de/Lehre und Arbeit/HRZ Hiwi/OLW Panopto/export.py" />
@@ -69,7 +75,28 @@
       <recent name="C:\Users\Abdulhaq\PycharmProjects\panoptoProjekt\ExportAsCSV_Algo" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.mainTest">
+  <component name="RunManager" selected="Python.TestCollection">
+    <configuration name="TestCollection" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="panoptoAutomatedUpload" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/TestCollection.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="export (2)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="panoptoAutomatedUpload" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -133,27 +160,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="panoptoAutomatedUpload" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Testskripte" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Testskripte/main.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="mainTest" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="panoptoAutomatedUpload" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -177,11 +183,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.TestCollection" />
+        <item itemvalue="Python.export (2)" />
         <item itemvalue="Python.mainTest" />
         <item itemvalue="Python.folderNameExtraction (1)" />
         <item itemvalue="Python.folderNameExtraction" />
-        <item itemvalue="Python.export (2)" />
-        <item itemvalue="Python.main (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -228,7 +234,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676538227197</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="1.) Der Zielordner in Panopto lässt sich nun mithilfe von panoptoDestinationFolderFinder.py finden">
+      <created>1676545809586</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1676545809586</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -252,6 +265,7 @@
     <MESSAGE value="Arbeitsplan überarbeitet." />
     <MESSAGE value="1.) Algorithmus zur Ordnerstruktur Erstellung hinzugefügt (siehe folderNameExtraction.py und panoptoFolderStructureCreation.py." />
     <MESSAGE value="1.) Beispielvideo testvideo.mp4 und Beispielpdf tuda_logo.pdf in einen Assets Ordner geschoben zur Herstellung von Übersichtlichtkeit." />
-    <option name="LAST_COMMIT_MESSAGE" value="1.) Beispielvideo testvideo.mp4 und Beispielpdf tuda_logo.pdf in einen Assets Ordner geschoben zur Herstellung von Übersichtlichtkeit." />
+    <MESSAGE value="1.) Der Zielordner in Panopto lässt sich nun mithilfe von panoptoDestinationFolderFinder.py finden" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.) Der Zielordner in Panopto lässt sich nun mithilfe von panoptoDestinationFolderFinder.py finden" />
   </component>
 </project>
