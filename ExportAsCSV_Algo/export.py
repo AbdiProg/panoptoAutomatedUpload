@@ -15,7 +15,7 @@ urls = {
     'rawFiles': 'https://olw-material.hrz.tu-darmstadt.de/olw-roh-repository/archive/',
     'convFiles': 'https://olw-material.hrz.tu-darmstadt.de/olw-konv-repository/material/',
 }
-
+#https://openlearnware.de/olw-rest-db/api/user/ für die Information zu den Professoren
 
 def get_collection(collection_id):
     response = requests.get(f'{urls["api"]}{urls["collection"]}{collection_id}')
@@ -34,41 +34,43 @@ resources = [r for r in get_resources() if not r['deleted'] and r['name']]
 
 print(json.dumps(resources, indent=10, sort_keys=True))
 
-for r in resources:
-    uuidPath = '/'.join(wrap(r['uuid'].replace('-', ''), 2))
-    resource = {'name': f'{r["name"]}',
-                'description': f'{r["description"]}',
-                'areas': f'{r["name"]}',
-                'author': f'{r["users"]}',
-                'collection': f'{r["collections"]}',
-                'code': f'{r["code"]}',
-                'rawFileDir': f'{urls["rawFiles"]}{uuidPath}',
-                'convFileDir': f'{urls["convFiles"]}{uuidPath}',
-                'viewerUrl': None,
-                'iFrame': None
-                }
+# for r in resources:
+#     uuidPath = '/'.join(wrap(r['uuid'].replace('-', ''), 2))
+#     resource = {'name': f'{r["name"]}',
+#                 'description': f'{r["description"]}',
+#                 'areas': f'{r["name"]}',
+#                 'author': f'{r["users"]}',
+#                 'collection': f'{r["collections"]}',
+#                 'code': f'{r["code"]}',
+#                 'rawFileDir': f'{urls["rawFiles"]}{uuidPath}',
+#                 'convFileDir': f'{urls["convFiles"]}{uuidPath}',
+#                 'viewerUrl': None,
+#                 'iFrame': None
+#                 }
     #vielleicht packen wir den Uploader direkt hier rein?
     #Der Upload link wird ja sowieso über die convFileDir erstellt. Dann können wir hier direkt die Daten für den iFrame abrufen
+    #
+    #
+    # #writes all metadata in csv table
+    # with open('mycsvfile.csv', 'a') as f:  # You will need 'wb' mode in Python 2.x
+    #     w = csv.DictWriter(f, resource.keys())
+    #     if f.tell() == 0:
+    #         w.writeheader()
+    #     w.writerow(resource)
 
-    print(resource)
-
-
-    #writes all metadata in csv table
-    with open('mycsvfile.csv', 'a') as f:  # You will need 'wb' mode in Python 2.x
-        w = csv.DictWriter(f, resource.keys())
-        if f.tell() == 0:
-            w.writeheader()
-        w.writerow(resource)
-
-
-#removes the empty rows of the csv table
-with open('mycsvfile.csv', newline='') as in_file:
-    with open('olw_ressources.csv', 'w', newline='') as out_file:
-        writer = csv.writer(out_file)
-        for row in csv.reader(in_file):
-            if any(row):
-                writer.writerow(row)
+#
+# #removes the empty rows of the csv table
+# with open('mycsvfile.csv', newline='') as in_file:
+#     with open('olw_ressources.csv', 'w', newline='') as out_file:
+#         writer = csv.writer(out_file)
+#         for row in csv.reader(in_file):
+#             if any(row):
+#                 writer.writerow(row)
 
 
 #methode für das Überschreiben der csv nach dem Upload:
 
+test = get_collection(78)
+
+#print(test)
+print(json.dumps(test, indent=10, sort_keys=True))

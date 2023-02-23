@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Session xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://tempuri.org/UniversalCaptureSpecification/v1">
-<<<<<<< Updated upstream
   <Title>testvideo1.mp4</Title>
   <Description>Ein TestVideo</Description>
 <<<<<<< Updated upstream:VideoMetadataXML/upload_manifest_generated.xml

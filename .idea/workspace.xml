@@ -5,17 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cc90bc2e-1463-4020-91bb-d67006a6d158" name="Changes" comment="1.) Der Zielordner in Panopto lässt sich nun mithilfe von panoptoDestinationFolderFinder.py finden">
-      <change afterPath="$PROJECT_DIR$/LearningUnit.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lecture.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestCollection.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/organiseResources.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Testskripte/Book1.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Testskripte/csv_writer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Testskripte/newfile.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_02_2023_11_24__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_02_2023_11_24__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_02_2023_11_43__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_02_2023_11_43__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_01_2023_13_16__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_01_2023_13_16__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Arbeitsplan.md" beforeDir="false" afterPath="$PROJECT_DIR$/Arbeitsplan.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ExportAsCSV_Algo/export.py" beforeDir="false" afterPath="$PROJECT_DIR$/ExportAsCSV_Algo/export.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ExportAsCSV_Algo/mycsvfile.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExportAsCSV_Algo/mycsvfile.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ExportAsCSV_Algo/olw_ressources.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExportAsCSV_Algo/olw_ressources.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/folderNameExtraction.py" beforeDir="false" afterPath="$PROJECT_DIR$/folderNameExtraction.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/token_test-tu-darmstadt.cloud.panopto.eu_5aff5849-cfaa-4176-8a79-af82009b4df3.cache" beforeDir="false" afterPath="$PROJECT_DIR$/token_test-tu-darmstadt.cloud.panopto.eu_5aff5849-cfaa-4176-8a79-af82009b4df3.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploadFromLink.py" beforeDir="false" afterPath="$PROJECT_DIR$/uploadFromLink.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testskripte/token_test-tu-darmstadt.cloud.panopto.eu_368929b5-aabf-4e43-9bc0-af82009ab95c.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Testskripte/token_test-tu-darmstadt.cloud.panopto.eu_368929b5-aabf-4e43-9bc0-af82009ab95c.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testskripte/upload_manifest_generated.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Testskripte/upload_manifest_generated.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VideoMetadataXML/upload_manifest_generated.xml" beforeDir="false" afterPath="$PROJECT_DIR$/VideoMetadataXML/upload_manifest_generated.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/publicAPI/token_test-tu-darmstadt.cloud.panopto.eu_368929b5-aabf-4e43-9bc0-af82009ab95c.cache" beforeDir="false" afterPath="$PROJECT_DIR$/publicAPI/token_test-tu-darmstadt.cloud.panopto.eu_368929b5-aabf-4e43-9bc0-af82009ab95c.cache" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,6 +92,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/TestCollection.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -109,6 +114,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ExportAsCSV_Algo/export.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -130,6 +136,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/folderNameExtraction.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -151,6 +158,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="C:\Users\Abdulhaq\PycharmProjects\panoptoProjekt\folderNameExtraction.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -172,6 +180,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mainTest.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -205,6 +214,7 @@
       <workItem from="1674207926274" duration="5127000" />
       <workItem from="1674724485400" duration="4390000" />
       <workItem from="1674731264385" duration="2985000" />
+      <workItem from="1677143820308" duration="1230000" />
     </task>
     <task id="LOCAL-00001" summary="Skripts umsortiert und neue Ordner geschaffen.&#10;&#10;Arbeitsplan aka. die nächsten Schritte festgelegt.">
       <created>1674824070656</created>
