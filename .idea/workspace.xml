@@ -4,18 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cc90bc2e-1463-4020-91bb-d67006a6d158" name="Changes" comment="1.) Der Zielordner in Panopto lässt sich nun mithilfe von panoptoDestinationFolderFinder.py finden">
-      <change afterPath="$PROJECT_DIR$/LearningUnit.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lecture.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestCollection.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/organiseResources.py" afterDir="false" />
+    <list default="true" id="cc90bc2e-1463-4020-91bb-d67006a6d158" name="Changes" comment="1.) OOP hinzugefügt für Ressourcen und Klassen für Lehrende, Lerneinheit und Veranstaltung erweitert">
+      <change afterPath="$PROJECT_DIR$/Objects/Lecturer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Objects/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ExportAsCSV_Algo/export.py" beforeDir="false" afterPath="$PROJECT_DIR$/ExportAsCSV_Algo/export.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ExportAsCSV_Algo/mycsvfile.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExportAsCSV_Algo/mycsvfile.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ExportAsCSV_Algo/olw_ressources.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExportAsCSV_Algo/olw_ressources.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/folderNameExtraction.py" beforeDir="false" afterPath="$PROJECT_DIR$/folderNameExtraction.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/token_test-tu-darmstadt.cloud.panopto.eu_5aff5849-cfaa-4176-8a79-af82009b4df3.cache" beforeDir="false" afterPath="$PROJECT_DIR$/token_test-tu-darmstadt.cloud.panopto.eu_5aff5849-cfaa-4176-8a79-af82009b4df3.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploadFromLink.py" beforeDir="false" afterPath="$PROJECT_DIR$/uploadFromLink.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LearningUnit.py" beforeDir="false" afterPath="$PROJECT_DIR$/Objects/LearningUnit.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lecture.py" beforeDir="false" afterPath="$PROJECT_DIR$/Objects/Lecture.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,11 +62,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Abdulhaq\PycharmProjects\panoptoProjekt\Objects" />
       <recent name="C:\Users\Abdulhaq\PycharmProjects\panoptoProjekt\Assets" />
       <recent name="C:\Users\Abdulhaq\PycharmProjects\panoptoProjekt\OtherCSVData" />
       <recent name="C:\Users\Abdulhaq\PycharmProjects\panoptoProjekt" />
       <recent name="C:\Users\Abdulhaq\PycharmProjects\panoptoProjekt\Testskripte" />
-      <recent name="C:\Users\Abdulhaq\PycharmProjects\panoptoProjekt\ExportAsCSV_Algo" />
     </key>
   </component>
   <component name="RunManager" selected="Python.TestCollection">
