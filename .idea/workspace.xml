@@ -5,11 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cc90bc2e-1463-4020-91bb-d67006a6d158" name="Changes" comment="1.) OOP hinzugefügt für Ressourcen und Klassen für Lehrende, Lerneinheit und Veranstaltung erweitert">
-      <change afterPath="$PROJECT_DIR$/Objects/Lecturer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Objects/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Objects/Resource.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LearningUnit.py" beforeDir="false" afterPath="$PROJECT_DIR$/Objects/LearningUnit.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lecture.py" beforeDir="false" afterPath="$PROJECT_DIR$/Objects/Lecture.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Objects/LearningUnit.py" beforeDir="false" afterPath="$PROJECT_DIR$/Objects/LearningUnit.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Objects/Lecture.py" beforeDir="false" afterPath="$PROJECT_DIR$/Objects/Lecture.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Objects/Lecturer.py" beforeDir="false" afterPath="$PROJECT_DIR$/Objects/Lecturer.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -235,7 +235,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676545809586</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="1.) OOP hinzugefügt für Ressourcen und Klassen für Lehrende, Lerneinheit und Veranstaltung erweitert">
+      <created>1677145705350</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1677145705350</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -260,6 +267,7 @@
     <MESSAGE value="1.) Algorithmus zur Ordnerstruktur Erstellung hinzugefügt (siehe folderNameExtraction.py und panoptoFolderStructureCreation.py." />
     <MESSAGE value="1.) Beispielvideo testvideo.mp4 und Beispielpdf tuda_logo.pdf in einen Assets Ordner geschoben zur Herstellung von Übersichtlichtkeit." />
     <MESSAGE value="1.) Der Zielordner in Panopto lässt sich nun mithilfe von panoptoDestinationFolderFinder.py finden" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.) Der Zielordner in Panopto lässt sich nun mithilfe von panoptoDestinationFolderFinder.py finden" />
+    <MESSAGE value="1.) OOP hinzugefügt für Ressourcen und Klassen für Lehrende, Lerneinheit und Veranstaltung erweitert" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.) OOP hinzugefügt für Ressourcen und Klassen für Lehrende, Lerneinheit und Veranstaltung erweitert" />
   </component>
 </project>
