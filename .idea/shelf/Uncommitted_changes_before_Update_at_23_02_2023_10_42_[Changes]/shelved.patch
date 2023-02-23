@@ -1,0 +1,215 @@
+Index: LearningUnit.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/LearningUnit.py b/Objects/LearningUnit.py
+rename from LearningUnit.py
+rename to Objects/LearningUnit.py
+--- a/LearningUnit.py	(revision b8d875ca463c0f81ba0697ec7068079bac0e9a77)
++++ b/Objects/LearningUnit.py	(date 1677145097425)
+@@ -2,9 +2,11 @@
+ 
+     #To a video belongs a name, description, videoLink, pdf and lecturers
+ 
+-    def __init__(self, name, description, videoLink, pdf, lecturers):
++    def __init__(self, id, name, description, videoLink, pdfLink, lecturers, license):
++        self.id = id
+         self.name = name
+         self.description = description
+         self.videoLink = videoLink
+-        self.pdf = pdf
++        self.pdfLink = pdfLink
+         self.lecturers = lecturers
++        self.license = license
+Index: TestCollection.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from textwrap import wrap\r\n\r\nimport requests\r\nimport json\r\nimport pandas as pd\r\nfrom dicttoxml import dicttoxml\r\nimport xml.etree.ElementTree as Xet\r\nimport csv\r\n\r\nurls = {\r\n    'api': 'https://openlearnware.tu-darmstadt.de/olw-rest-db/api',\r\n    'collectionIds': '/collection-overview/filter/index/all?pick=id&pick=name',\r\n    'collection': '/collection-detailview/index/',\r\n    'resources': '/resource-overview/filter/index/all?deleted=false',\r\n    'rawFiles': 'https://olw-material.hrz.tu-darmstadt.de/olw-roh-repository/archive/',\r\n    'convFiles': 'https://olw-material.hrz.tu-darmstadt.de/olw-konv-repository/material/',\r\n}\r\n\r\n\r\ndef get_collection(collection_id):\r\n    response = requests.get(f'{urls[\"api\"]}{urls[\"collection\"]}{collection_id}')\r\n    return json.loads(response.text)\r\n\r\n\r\ndef get_resources():\r\n    response = requests.get(f'{urls[\"api\"]}{urls[\"resources\"]}')\r\n    json_file = json.loads(response.text)\r\n    xml = dicttoxml(json_file)\r\n    # print(xml)\r\n    return json_file\r\n\r\n\r\n#resources = [r for r in get_resources() if not r['deleted'] and r['name']]\r\n\r\n\"\"\"\r\ndef get_resources_outOfCollectionID(collection_id):\r\n    for r in resources:\r\n        if f'{r[\"collections\"]}' != \"[]\":\r\n            if f'{r[\"collections\"][0][\"id\"]}' == str(collection_id):\r\n                uuidPath = '/'.join(wrap(r['uuid'].replace('-', ''), 2))\r\n                resource = {'name': f'{r[\"name\"]}',\r\n                            'description': f'{r[\"description\"]}',\r\n                            'areas': f'{r[\"name\"]}',\r\n                            'author': f'{r[\"users\"]}',\r\n                            'collection': f'{r[\"collections\"]}',\r\n                            'code': f'{r[\"code\"]}',\r\n                            'rawFileDir': f'{urls[\"rawFiles\"]}{uuidPath}',\r\n                            'convFileDir': f'{urls[\"convFiles\"]}{uuidPath}',\r\n                            'viewerUrl': None,\r\n                            'iFrame': None\r\n                            }\r\n                print(json.dumps(resource, indent=6, sort_keys=True))\r\n\r\n\"\"\"\r\n\r\ndef checkIfCollectionElementIsInRubric(collectionElement, rubric):\r\n    if collectionElement in rubric:\r\n        return True\r\n    return False\r\n\r\ndef get_informationOfAllCollections():\r\n    collectionIds = requests.get(f'{urls[\"api\"]}{urls[\"collectionIds\"]}')\r\n    collectionJson = collectionIds.json()\r\n    lectures = []\r\n    for collection in collectionJson:\r\n        singleCollection = get_collection(collection['id'])\r\n        # print(singleCollection[\"resources\"])\r\n\r\n# print(get_collection(78))\r\n#print(json.dumps(get_collection(42), indent=6, sort_keys=True))\r\n\r\n\r\n# print(get_collection(78))\r\n# get_informationOfAllCollections()\r\n#get_resources_outOfCollectionID(78)\r\n\r\n\r\n#Collection-Test\r\nresponseJson = get_collection(78)\r\nprint(responseJson[\"collectionElements\"])\r\nprint(responseJson[\"rubrics\"]['1970'])\r\nresponseJson2 = get_collection(42)\r\nprint(json.dumps(get_collection(42), indent=6, sort_keys=True))\r\nprint(checkIfCollectionElementIsInRubric('191', responseJson[\"rubrics\"])) #Geht!
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/TestCollection.py b/TestCollection.py
+--- a/TestCollection.py	(revision b8d875ca463c0f81ba0697ec7068079bac0e9a77)
++++ b/TestCollection.py	(date 1677145067596)
+@@ -64,6 +64,12 @@
+     lectures = []
+     for collection in collectionJson:
+         singleCollection = get_collection(collection['id'])
++        name = singleCollection["name"]
++        description = singleCollection["description"]
++        learningUnits = []
++        lecturers = []
++        areas = []
++        semesterValue = singleCollection["semesters"]["value"]
+         # print(singleCollection["resources"])
+ 
+ # print(get_collection(78))
+@@ -78,7 +84,9 @@
+ #Collection-Test
+ responseJson = get_collection(78)
+ print(responseJson["collectionElements"])
+-print(responseJson["rubrics"]['1970'])
+-responseJson2 = get_collection(42)
+-print(json.dumps(get_collection(42), indent=6, sort_keys=True))
+-print(checkIfCollectionElementIsInRubric('191', responseJson["rubrics"])) #Geht!
+\ No newline at end of file
++print(responseJson["rubrics"])
++responseJson2 = get_collection(78)
++print(responseJson2["name"])
++print(responseJson2["description"])
++print(json.dumps(responseJson2, indent=6, sort_keys=True))
++#print(checkIfCollectionElementIsInRubric('191', responseJson["rubrics"])) #Geht!
+\ No newline at end of file
+Index: Lecture.py
+===================================================================
+diff --git a/Lecture.py b/Lecture.py
+deleted file mode 100644
+--- a/Lecture.py	(revision b8d875ca463c0f81ba0697ec7068079bac0e9a77)
++++ /dev/null	(revision b8d875ca463c0f81ba0697ec7068079bac0e9a77)
+@@ -1,6 +0,0 @@
+-class Lecture:
+-
+-    def __init__(self, name, description, learningUnits):
+-        self.name = name
+-        self.description = description
+-        self.learningUnits = learningUnits
+Index: Objects/Lecturer.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Objects/Lecturer.py b/Objects/Lecturer.py
+new file mode 100644
+--- /dev/null	(date 1677144478986)
++++ b/Objects/Lecturer.py	(date 1677144478986)
+@@ -0,0 +1,13 @@
++class Lecturer:
++
++    def __init__(self, id, title, firstName, lastName, email, organization, website, about, photoLink, fullName):
++        self.id = id
++        self.title = title
++        self.firstName = firstName
++        self.lastName = lastName
++        self.email = email
++        self.organization = organization
++        self.website = website
++        self.about = about
++        self.photoLink = photoLink
++        self.fullName = fullName
+\ No newline at end of file
+Index: Objects/Lecture.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Objects/Lecture.py b/Objects/Lecture.py
+new file mode 100644
+--- /dev/null	(date 1677145022642)
++++ b/Objects/Lecture.py	(date 1677145022642)
+@@ -0,0 +1,10 @@
++class Lecture:
++
++    def __init__(self, id, name, description, learningUnits, lecturers, areas, semesterValue):
++        self.id = id
++        self.name = name
++        self.description = description
++        self.learningUnits = learningUnits
++        self.lecturers = lecturers
++        self.areas = areas
++        self.semesterValue = semesterValue
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"cc90bc2e-1463-4020-91bb-d67006a6d158\" name=\"Changes\" comment=\"1.) Der Zielordner in Panopto lässt sich nun mithilfe von panoptoDestinationFolderFinder.py finden\">\r\n      <change afterPath=\"$PROJECT_DIR$/LearningUnit.py\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/Lecture.py\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/TestCollection.py\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/organiseResources.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/ExportAsCSV_Algo/export.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/ExportAsCSV_Algo/export.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/ExportAsCSV_Algo/mycsvfile.csv\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/ExportAsCSV_Algo/mycsvfile.csv\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/ExportAsCSV_Algo/olw_ressources.csv\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/ExportAsCSV_Algo/olw_ressources.csv\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/folderNameExtraction.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/folderNameExtraction.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/token_test-tu-darmstadt.cloud.panopto.eu_5aff5849-cfaa-4176-8a79-af82009b4df3.cache\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/token_test-tu-darmstadt.cloud.panopto.eu_5aff5849-cfaa-4176-8a79-af82009b4df3.cache\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/uploadFromLink.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/uploadFromLink.py\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Python Script\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"FlaskConsoleOptions\" custom-start-script=\"import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\\nApp: %s [%s]\\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))\">\r\n    <envs>\r\n      <env key=\"FLASK_APP\" value=\"app\" />\r\n    </envs>\r\n    <option name=\"myCustomStartScript\" value=\"import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\\nApp: %s [%s]\\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))\" />\r\n    <option name=\"myEnvs\">\r\n      <map>\r\n        <entry key=\"FLASK_APP\" value=\"app\" />\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2KXbGQDm3qNOajclAYiusFeVwfu\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"ASKED_ADD_EXTERNAL_FILES\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"ToolWindowEvent Log.ShowToolbar\" value=\"false\" />\r\n    <property name=\"ToolWindowRun.ShowToolbar\" value=\"false\" />\r\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\r\n    <property name=\"com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File\" value=\"Markdown\" />\r\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$/../OneDrive - stud.tu-darmstadt.de/Lehre und Arbeit/HRZ Hiwi/OLW Panopto/export.py\" />\r\n    <property name=\"node.js.detected.package.eslint\" value=\"true\" />\r\n    <property name=\"node.js.detected.package.tslint\" value=\"true\" />\r\n    <property name=\"node.js.selected.package.eslint\" value=\"(autodetect)\" />\r\n    <property name=\"node.js.selected.package.tslint\" value=\"(autodetect)\" />\r\n    <property name=\"settings.editor.selected.configurable\" value=\"com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable\" />\r\n  </component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\Abdulhaq\\PycharmProjects\\panoptoProjekt\\Assets\" />\r\n      <recent name=\"C:\\Users\\Abdulhaq\\PycharmProjects\\panoptoProjekt\\OtherCSVData\" />\r\n      <recent name=\"C:\\Users\\Abdulhaq\\PycharmProjects\\panoptoProjekt\" />\r\n      <recent name=\"C:\\Users\\Abdulhaq\\PycharmProjects\\panoptoProjekt\\Testskripte\" />\r\n      <recent name=\"C:\\Users\\Abdulhaq\\PycharmProjects\\panoptoProjekt\\ExportAsCSV_Algo\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Python.TestCollection\">\r\n    <configuration name=\"TestCollection\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"panoptoAutomatedUpload\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/TestCollection.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"export (2)\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"panoptoAutomatedUpload\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$/ExportAsCSV_Algo\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/ExportAsCSV_Algo/export.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"folderNameExtraction (1)\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"panoptoAutomatedUpload\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/folderNameExtraction.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"folderNameExtraction\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"panoptoAutomatedUpload\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"C:\\Users\\Abdulhaq\\PycharmProjects\\panoptoProjekt\\folderNameExtraction.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"mainTest\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"panoptoAutomatedUpload\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/mainTest.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Python.TestCollection\" />\r\n        <item itemvalue=\"Python.export (2)\" />\r\n        <item itemvalue=\"Python.mainTest\" />\r\n        <item itemvalue=\"Python.folderNameExtraction (1)\" />\r\n        <item itemvalue=\"Python.folderNameExtraction\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"cc90bc2e-1463-4020-91bb-d67006a6d158\" name=\"Changes\" comment=\"\" />\r\n      <created>1674123779066</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1674123779066</updated>\r\n      <workItem from=\"1674123781147\" duration=\"803000\" />\r\n      <workItem from=\"1674125038784\" duration=\"3224000\" />\r\n      <workItem from=\"1674205451255\" duration=\"116000\" />\r\n      <workItem from=\"1674207926274\" duration=\"5127000\" />\r\n      <workItem from=\"1674724485400\" duration=\"4390000\" />\r\n      <workItem from=\"1674731264385\" duration=\"2985000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Skripts umsortiert und neue Ordner geschaffen.&#10;&#10;Arbeitsplan aka. die nächsten Schritte festgelegt.\">\r\n      <created>1674824070656</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1674824070656</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"Arbeitsplan überarbeitet.\">\r\n      <created>1676373426084</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1676373426084</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"1.) Algorithmus zur Ordnerstruktur Erstellung hinzugefügt (siehe folderNameExtraction.py und panoptoFolderStructureCreation.py.\">\r\n      <created>1676538124994</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1676538124994</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"1.) Beispielvideo testvideo.mp4 und Beispielpdf tuda_logo.pdf in einen Assets Ordner geschoben zur Herstellung von Übersichtlichtkeit.\">\r\n      <created>1676538227197</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1676538227197</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"1.) Der Zielordner in Panopto lässt sich nun mithilfe von panoptoDestinationFolderFinder.py finden\">\r\n      <created>1676545809586</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1676545809586</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"6\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n    <option name=\"oldMeFiltersMigrated\" value=\"true\" />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <option name=\"ADD_EXTERNAL_FILES_SILENTLY\" value=\"true\" />\r\n    <MESSAGE value=\"Skripts umsortiert und neue Ordner geschaffen.&#10;&#10;Arbeitsplan aka. die nächsten Schritte festgelegt.\" />\r\n    <MESSAGE value=\"Arbeitsplan überarbeitet.\" />\r\n    <MESSAGE value=\"1.) Algorithmus zur Ordnerstruktur Erstellung hinzugefügt (siehe folderNameExtraction.py und panoptoFolderStructureCreation.py.\" />\r\n    <MESSAGE value=\"1.) Beispielvideo testvideo.mp4 und Beispielpdf tuda_logo.pdf in einen Assets Ordner geschoben zur Herstellung von Übersichtlichtkeit.\" />\r\n    <MESSAGE value=\"1.) Der Zielordner in Panopto lässt sich nun mithilfe von panoptoDestinationFolderFinder.py finden\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"1.) Der Zielordner in Panopto lässt sich nun mithilfe von panoptoDestinationFolderFinder.py finden\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision b8d875ca463c0f81ba0697ec7068079bac0e9a77)
++++ b/.idea/workspace.xml	(date 1677145312722)
+@@ -4,18 +4,15 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="cc90bc2e-1463-4020-91bb-d67006a6d158" name="Changes" comment="1.) Der Zielordner in Panopto lässt sich nun mithilfe von panoptoDestinationFolderFinder.py finden">
+-      <change afterPath="$PROJECT_DIR$/LearningUnit.py" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/Lecture.py" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/TestCollection.py" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/organiseResources.py" afterDir="false" />
++    <list default="true" id="cc90bc2e-1463-4020-91bb-d67006a6d158" name="Changes" comment="1.) OOP hinzugefügt für Veranstaltung und den Einzelvideos&#10;2.) Metadaten Zusammenführung in &quot;TestCollection&quot;">
++      <change afterPath="$PROJECT_DIR$/Objects/Lecture.py" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Objects/Lecturer.py" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Objects/Ressource.py" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Objects/__init__.py" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/ExportAsCSV_Algo/export.py" beforeDir="false" afterPath="$PROJECT_DIR$/ExportAsCSV_Algo/export.py" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/ExportAsCSV_Algo/mycsvfile.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExportAsCSV_Algo/mycsvfile.csv" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/ExportAsCSV_Algo/olw_ressources.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExportAsCSV_Algo/olw_ressources.csv" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/folderNameExtraction.py" beforeDir="false" afterPath="$PROJECT_DIR$/folderNameExtraction.py" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/token_test-tu-darmstadt.cloud.panopto.eu_5aff5849-cfaa-4176-8a79-af82009b4df3.cache" beforeDir="false" afterPath="$PROJECT_DIR$/token_test-tu-darmstadt.cloud.panopto.eu_5aff5849-cfaa-4176-8a79-af82009b4df3.cache" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/uploadFromLink.py" beforeDir="false" afterPath="$PROJECT_DIR$/uploadFromLink.py" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/LearningUnit.py" beforeDir="false" afterPath="$PROJECT_DIR$/Objects/LearningUnit.py" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/Lecture.py" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/TestCollection.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestCollection.py" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -68,11 +65,11 @@
+   </component>
+   <component name="RecentsManager">
+     <key name="MoveFile.RECENT_KEYS">
++      <recent name="C:\Users\Abdulhaq\PycharmProjects\panoptoProjekt\Objects" />
+       <recent name="C:\Users\Abdulhaq\PycharmProjects\panoptoProjekt\Assets" />
+       <recent name="C:\Users\Abdulhaq\PycharmProjects\panoptoProjekt\OtherCSVData" />
+       <recent name="C:\Users\Abdulhaq\PycharmProjects\panoptoProjekt" />
+       <recent name="C:\Users\Abdulhaq\PycharmProjects\panoptoProjekt\Testskripte" />
+-      <recent name="C:\Users\Abdulhaq\PycharmProjects\panoptoProjekt\ExportAsCSV_Algo" />
+     </key>
+   </component>
+   <component name="RunManager" selected="Python.TestCollection">
+@@ -241,7 +238,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1676545809586</updated>
+     </task>
+-    <option name="localTasksCounter" value="6" />
++    <task id="LOCAL-00006" summary="1.) OOP hinzugefügt für Veranstaltung und den Einzelvideos&#10;2.) Metadaten Zusammenführung in &quot;TestCollection&quot;">
++      <created>1676987189293</created>
++      <option name="number" value="00006" />
++      <option name="presentableId" value="LOCAL-00006" />
++      <option name="project" value="LOCAL" />
++      <updated>1676987189293</updated>
++    </task>
++    <option name="localTasksCounter" value="7" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -266,6 +270,7 @@
+     <MESSAGE value="1.) Algorithmus zur Ordnerstruktur Erstellung hinzugefügt (siehe folderNameExtraction.py und panoptoFolderStructureCreation.py." />
+     <MESSAGE value="1.) Beispielvideo testvideo.mp4 und Beispielpdf tuda_logo.pdf in einen Assets Ordner geschoben zur Herstellung von Übersichtlichtkeit." />
+     <MESSAGE value="1.) Der Zielordner in Panopto lässt sich nun mithilfe von panoptoDestinationFolderFinder.py finden" />
+-    <option name="LAST_COMMIT_MESSAGE" value="1.) Der Zielordner in Panopto lässt sich nun mithilfe von panoptoDestinationFolderFinder.py finden" />
++    <MESSAGE value="1.) OOP hinzugefügt für Veranstaltung und den Einzelvideos&#10;2.) Metadaten Zusammenführung in &quot;TestCollection&quot;" />
++    <option name="LAST_COMMIT_MESSAGE" value="1.) OOP hinzugefügt für Veranstaltung und den Einzelvideos&#10;2.) Metadaten Zusammenführung in &quot;TestCollection&quot;" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: Objects/Ressource.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Objects/Ressource.py b/Objects/Ressource.py
+new file mode 100644
+--- /dev/null	(date 1677145312677)
++++ b/Objects/Ressource.py	(date 1677145312677)
+@@ -0,0 +1,5 @@
++class Ressource:
++
++    def __init__(self, type, link):
++        self.type = type
++        self.link = link
+\ No newline at end of file
+diff --git a/Objects/__init__.py b/Objects/__init__.py
+new file mode 100644
