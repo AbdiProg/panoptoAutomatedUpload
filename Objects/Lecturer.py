@@ -11,3 +11,4 @@ class Lecturer:
         self.firstName = firstName
         self.title = title
         self.id = id
+

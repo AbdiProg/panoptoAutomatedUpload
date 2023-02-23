@@ -7,6 +7,10 @@ from dicttoxml import dicttoxml
 import xml.etree.ElementTree as Xet
 import csv
 
+from Objects.Area import Area
+from Objects.Lecture import Lecture
+from Objects.Lecturer import Lecturer
+
 urls = {
     'api': 'https://openlearnware.tu-darmstadt.de/olw-rest-db/api',
     'collectionIds': '/collection-overview/filter/index/all?pick=id&pick=name',
@@ -14,6 +18,7 @@ urls = {
     'resources': '/resource-overview/filter/index/all?deleted=false',
     'rawFiles': 'https://olw-material.hrz.tu-darmstadt.de/olw-roh-repository/archive/',
     'convFiles': 'https://olw-material.hrz.tu-darmstadt.de/olw-konv-repository/material/',
+    'users': '/user/',
 }
 
 
@@ -30,7 +35,7 @@ def get_resources():
     return json_file
 
 
-#resources = [r for r in get_resources() if not r['deleted'] and r['name']]
+# resources = [r for r in get_resources() if not r['deleted'] and r['name']]
 
 """
 def get_resources_outOfCollectionID(collection_id):
@@ -53,10 +58,38 @@ def get_resources_outOfCollectionID(collection_id):
 
 """
 
+
 def checkIfCollectionElementIsInRubric(collectionElement, rubric):
     if collectionElement in rubric:
         return True
     return False
+
+
+def get_areas(jsonData):
+    areas = jsonData["areas"]
+    areaObjects = []
+    for area in areas:
+        tmpArea = Area(area['id'], area['name'])
+        areaObjects.append(tmpArea)
+
+    return areaObjects
+
+
+def get_lecturers(jsonData):
+    users = jsonData["users"]
+    userObjects = []
+    for user in users:
+        urlLink = f'{urls["api"]}{urls["users"]}{user["id"]}'
+        response = requests.get(urlLink)
+        responseJson = response.json()
+        photoLink = ""
+        if responseJson['photoAvailable']:
+            photoLink = f'{urls["api"]}{urls["users"]}{user["id"]}{"/photo"}'
+        tmpUser = Lecturer(responseJson['id'], responseJson['title'], responseJson['firstName'], responseJson['lastName'],
+                           responseJson['email'], responseJson['organization'], responseJson['website'], responseJson['about'], responseJson['name'], photoLink)
+        userObjects.append(tmpUser)
+
+    return userObjects
 
 def get_informationOfAllCollections():
     collectionIds = requests.get(f'{urls["api"]}{urls["collectionIds"]}')
@@ -64,21 +97,34 @@ def get_informationOfAllCollections():
     lectures = []
     for collection in collectionJson:
         singleCollection = get_collection(collection['id'])
-        # print(singleCollection["resources"])
+        lectureName = singleCollection["name"]
+        lectureDescription = singleCollection["description"]
+        lectureLearningUnits = []
+        lectureLecturers = get_lecturers(singleCollection)
+        lectureAreas = get_areas(singleCollection)
+        lectureSemesterValue = singleCollection["semester"]["value"]
+
+        tmpLecture = Lecture(lectureName, lectureDescription, lectureLearningUnits, lectureLecturers, lectureAreas,
+                             lectureSemesterValue)
+        lectures.append(tmpLecture)
+
 
 # print(get_collection(78))
-#print(json.dumps(get_collection(42), indent=6, sort_keys=True))
+# print(json.dumps(get_collection(42), indent=6, sort_keys=True))
 
 
 # print(get_collection(78))
 # get_informationOfAllCollections()
-#get_resources_outOfCollectionID(78)
+# get_resources_outOfCollectionID(78)
 
 
-#Collection-Test
+# Collection-Test
 responseJson = get_collection(78)
 print(responseJson["collectionElements"])
-print(responseJson["rubrics"]['1970'])
-responseJson2 = get_collection(42)
-print(json.dumps(get_collection(42), indent=6, sort_keys=True))
-print(checkIfCollectionElementIsInRubric('191', responseJson["rubrics"])) #Geht!
+#print(responseJson["rubrics"]['1970'])
+#print(json.dumps(responseJson, indent=6, sort_keys=True))
+#print(get_lecturers(responseJson))
+#for user in get_lecturers(responseJson): print(user.firstName, user.lastName, user.about)
+# responseJson2 = get_collection(42)
+# print(json.dumps(get_collection(42), indent=6, sort_keys=True))
+# print(checkIfCollectionElementIsInRubric('191', responseJson["rubrics"])) #Geht!
