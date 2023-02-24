@@ -7,6 +7,8 @@ from dicttoxml import dicttoxml
 import xml.etree.ElementTree as Xet
 import csv
 
+from Objects.LearningUnit import LearningUnit
+from Objects.Resource import Resource
 from Objects.Area import Area
 from Objects.Lecture import Lecture
 from Objects.Lecturer import Lecturer
@@ -85,11 +87,61 @@ def get_lecturers(jsonData):
         photoLink = ""
         if responseJson['photoAvailable']:
             photoLink = f'{urls["api"]}{urls["users"]}{user["id"]}{"/photo"}'
-        tmpUser = Lecturer(responseJson['id'], responseJson['title'], responseJson['firstName'], responseJson['lastName'],
-                           responseJson['email'], responseJson['organization'], responseJson['website'], responseJson['about'], responseJson['name'], photoLink)
+        tmpUser = Lecturer(responseJson['id'], responseJson['title'], responseJson['firstName'],
+                           responseJson['lastName'],
+                           responseJson['email'], responseJson['organization'], responseJson['website'],
+                           responseJson['about'], responseJson['name'], photoLink)
         userObjects.append(tmpUser)
 
     return userObjects
+
+
+def get_singleResource(jsonData, element):
+    uuidPath = '/'.join(wrap(jsonData["resources"][str(element)]['uuid'].replace('-', ''), 2))
+    videoLink = f'{urls["convFiles"]}{uuidPath}'
+
+    resourceJson = jsonData["resources"][str(element)]
+    resourceName = jsonData["resources"][str(element)]["name"]
+    resourceLicense = jsonData["resources"][str(element)]["license"]["code"]
+    resourceLecturers = get_lecturers(resourceJson)
+    resourceConcreteResource = Resource(jsonData["resources"][str(element)]["type"], videoLink, resourceLicense)
+    tmpLearningUnitObjectOrResource = LearningUnit(resourceName, "", resourceConcreteResource, resourceLecturers)
+
+    return tmpLearningUnitObjectOrResource
+
+
+def get_singleResource2(jsonData, element):
+    uuidPath = '/'.join(wrap(jsonData["resources"][str(element)]['uuid'].replace('-', ''), 2))
+    link = f'{urls["convFiles"]}{uuidPath}'
+
+    resourceJson = jsonData["resources"][str(element)]
+    resourceLicense = jsonData["resources"][str(element)]["license"]["code"]
+    resourceType = jsonData["resources"][str(element)]["type"]
+
+    return Resource(resourceType, link, resourceLicense)
+
+
+def get_lectureUnits(jsonData):
+    collectionElements = jsonData["collectionElements"]
+    lectureUnitObjects = []
+
+    for element in collectionElements:
+        if str(element) in jsonData["rubrics"]:
+            rubricJson = jsonData["rubrics"][str(element)]
+            learningUnitName = jsonData["rubrics"][str(element)]["name"]
+            lectureUnitLecturers = get_lecturers(jsonData["resources"][str(responseJson["rubrics"][str(element)]["resources"][0])])
+            resources = []
+            for resource in rubricJson["resources"]:
+                resources.append(get_singleResource2(jsonData, str(resource)))
+
+            tmpLearningUnitObject = LearningUnit(learningUnitName, "", resources, lectureUnitLecturers)
+            lectureUnitObjects.append(tmpLearningUnitObject)
+        else:
+            tmpLearningUnitObject = get_singleResource(jsonData, element)
+            lectureUnitObjects.append(tmpLearningUnitObject)
+
+    return lectureUnitObjects
+
 
 def get_informationOfAllCollections():
     collectionIds = requests.get(f'{urls["api"]}{urls["collectionIds"]}')
@@ -119,12 +171,18 @@ def get_informationOfAllCollections():
 
 
 # Collection-Test
-responseJson = get_collection(78)
-print(responseJson["collectionElements"])
-#print(responseJson["rubrics"]['1970'])
+responseJson = get_collection(42)
+#print(responseJson["collectionElements"])  #
+print(get_lectureUnits(responseJson))
+#print(responseJson["rubrics"]["867"]["name"])
+# print(responseJson["rubrics"]['1970'])
 #print(json.dumps(responseJson, indent=6, sort_keys=True))
-#print(get_lecturers(responseJson))
-#for user in get_lecturers(responseJson): print(user.firstName, user.lastName, user.about)
+#print(responseJson ["resources"][str(responseJson["rubrics"]["867"]["resources"][0])])
+# print(get_lecturers(responseJson))
+for lec in get_lectureUnits(responseJson):
+    print(lec.name)
+    for res in lec.resources:
+        print(res)
 # responseJson2 = get_collection(42)
 # print(json.dumps(get_collection(42), indent=6, sort_keys=True))
 # print(checkIfCollectionElementIsInRubric('191', responseJson["rubrics"])) #Geht!

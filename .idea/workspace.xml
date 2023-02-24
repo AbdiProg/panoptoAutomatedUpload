@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cc90bc2e-1463-4020-91bb-d67006a6d158" name="Changes" comment="1.) OOP hinzugefügt für Ressourcen und Klassen für Lehrende, Lerneinheit und Veranstaltung erweitert">
-      <change afterPath="$PROJECT_DIR$/Objects/Area.py" afterDir="false" />
+    <list default="true" id="cc90bc2e-1463-4020-91bb-d67006a6d158" name="Changes" comment="1.) Metadaten-Entnahme Algorithmus aktualisiert unter TestCollection&#10;2.) Lecturer und Area als Klassen für OOP hinzugefügt">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Objects/Lecturer.py" beforeDir="false" afterPath="$PROJECT_DIR$/Objects/Lecturer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Objects/LearningUnit.py" beforeDir="false" afterPath="$PROJECT_DIR$/Objects/LearningUnit.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Objects/Lecture.py" beforeDir="false" afterPath="$PROJECT_DIR$/Objects/Lecture.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Objects/Resource.py" beforeDir="false" afterPath="$PROJECT_DIR$/Objects/Resource.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TestCollection.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestCollection.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -270,7 +271,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677146058601</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="1.) Metadaten-Entnahme Algorithmus aktualisiert unter TestCollection&#10;2.) Lecturer und Area als Klassen für OOP hinzugefügt">
+      <created>1677150712666</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1677150712666</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -296,6 +304,7 @@
     <MESSAGE value="1.) Beispielvideo testvideo.mp4 und Beispielpdf tuda_logo.pdf in einen Assets Ordner geschoben zur Herstellung von Übersichtlichtkeit." />
     <MESSAGE value="1.) Der Zielordner in Panopto lässt sich nun mithilfe von panoptoDestinationFolderFinder.py finden" />
     <MESSAGE value="1.) OOP hinzugefügt für Ressourcen und Klassen für Lehrende, Lerneinheit und Veranstaltung erweitert" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.) OOP hinzugefügt für Ressourcen und Klassen für Lehrende, Lerneinheit und Veranstaltung erweitert" />
+    <MESSAGE value="1.) Metadaten-Entnahme Algorithmus aktualisiert unter TestCollection&#10;2.) Lecturer und Area als Klassen für OOP hinzugefügt" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.) Metadaten-Entnahme Algorithmus aktualisiert unter TestCollection&#10;2.) Lecturer und Area als Klassen für OOP hinzugefügt" />
   </component>
 </project>

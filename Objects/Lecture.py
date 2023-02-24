@@ -7,3 +7,6 @@ class Lecture:
         self.lecturers = lecturers
         self.areas = areas
         self.semesterValue = semesterValue
+
+    def __str__(self):
+        return self.name + " : " + self.description + " : " + self.areas + " : " + self.semesterValue
