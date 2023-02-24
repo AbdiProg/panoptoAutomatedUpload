@@ -1,0 +1,100 @@
+id,title,firstName,lastName,email,organization,website,about,photoAvailable,name
+1,Prof. Dr.-Ing.,Peter,Pelz,,,http://www.fst.tu-darmstadt.de/fachgebiet/mitarbeiter/mitarbeiterdetails_fst_8704.de.jsp,,"<img src=""https://openlearnware.de/olw-rest-db/api/user/1/photo"">",Peter Pelz
+2,Dr.,Geert,Hendrich,,,http://www.philosophie.tu-darmstadt.de/institut/mitarbeiterinnen_1/lehrbeauftragte/hendrich_1_~id1116850/aktuelleforschungsschwerpunkte_6.de.jsp,,False,Geert Hendrich
+3,Dr.,Heinrich,Abele,,Universität Tübingen,http://www.uni-tuebingen.de/en/facilities/zentrum-fuer-datenverarbeitung/wir-ueber-uns/mitarbeiter/dr-heinrich-abele.html,,False,Heinrich Abele
+4,Prof. Dr.,Alexander,Martin,,,http://www3.mathematik.tu-darmstadt.de/index.php?id=261,,False,Alexander Martin
+5,Dr.,Verena,Schuler,,BMW,,,False,Verena Schuler
+6,Prof. Dr.,Alexandra,Manzei,,,http://www.ifs.tu-darmstadt.de/index.php?id=2719,,False,Alexandra Manzei
+7,Dr.-Ing.,Christoph,Rensing,,,http://www.kom.tu-darmstadt.de/en/kom-multimedia-communications-lab/people/staff/christoph-rensing/?no_cache=1,,False,Christoph Rensing
+8,Dr.,Guido,Rößling,,,http://www.tk.informatik.tu-darmstadt.de/de/people/dr-guido-roessling/,,False,Guido Rößling
+9,,Dipl.-Psych.Michael,Vogt,,Universität Gießen,,,False,Dipl.-Psych.Michael Vogt
+10,Prof. Dr.,Mitchell,Ash,,Universität Wien,,,False,Mitchell Ash
+11,Ass.jur.,Jan,Hansen,,,http://www.kom.tu-darmstadt.de/en/kom-multimedia-communications-lab/people/staff/jan-hansen/?no_cache=1,,False,Jan Hansen
+12,Dr.-Ing.,Gerhard,Ludwig,,,http://www.fst.tu-darmstadt.de/fachgebiet/mitarbeiter/mitarbeiterdetails_fst_133.de.jsp,,False,Gerhard Ludwig
+13,,Dirk,Breuer,,Toyota Deutschland GmbH,,,False,Dirk Breuer
+14,Prof. Dr.,Georg,Zenkert,,Pädagogische Hochschule Heidelberg,http://www.ph-heidelberg.de/org/allgemein/3129.0.html,,False,Georg Zenkert
+15,Prof. Dr.,Ulrich,Raulff,,Deutsches Literaturarchiv Marbach,http://www.dla-marbach.de/index.php?id=110&tx_mfcworkerlist_pi1[detail]=51,,False,Ulrich Raulff
+16,PD Dr.,Marc,Rölli,,,http://www.philosophie.tu-darmstadt.de/institut/mitarbeiterinnen_1/mitarbeiter_1/rlli/aktuelleforschungsschwerpunkte_14.de.jsp,,False,Marc Rölli
+17,Prof.,Ian,Buchanan,,Cardiff University,http://cardiff.ac.uk/encap/contactsandpeople/profiles/buchanan-ian.html,,False,Ian Buchanan
+18,M.A.,Christian,Diel,,,,,False,Christian Diel
+19,,Wolfgang,Lohbeck,,Greenpeace,,,False,Wolfgang Lohbeck
+20,Dr.,Hans-Georg,Nolte-Fischer,,,http://www.ulb.tu-darmstadt.de/ulb/ueberuns/direktion/organisation_mitarbeiter_details_1856.de.jsp,,False,Hans-Georg Nolte-Fischer
+21,Prof. Dr.,Michael,Kohler,,,http://www3.mathematik.tu-darmstadt.de/index.php?id=253,,"<img src=""https://openlearnware.de/olw-rest-db/api/user/21/photo"">",Michael Kohler
+22,Prof. Dr.,Hermann,Winner,,,http://www.fzd.tu-darmstadt.de/fzd/personal/professorwinner/hermannwinner/professorwinner.de.jsp,,False,Hermann Winner
+23,Dr.,Kalman,Graffi,,"KOM – Multimedia Communications Lab, TU Darmstadt",,,False,Kalman Graffi
+24,,Hans Thomas,Ebner,,Verband der Automobilindustrie VDA,,,False,Hans Thomas Ebner
+25,Prof. Dr.,Lorraine,Daston,,Max-Planck-Institut für Wissenschaftsgeschichte in Berlin,http://www.mpiwg-berlin.mpg.de/en/staff/members/ldaston,,False,Lorraine Daston
+26,Prof. Dr.,Ludolf,Kuchenbuch,,Fernuni Hagen,http://www.fernuni-hagen.de/geschichte/institut/team/ludolf.kuchenbuch_lg1.shtml,,False,Ludolf Kuchenbuch
+27,,Andrea,Peter,,,http://www3.mathematik.tu-darmstadt.de/index.php?id=261,,False,Andrea Peter
+28,Prof. Dr.,Johannes,Buchmann,,,http://www.cdc.informatik.tu-darmstadt.de/mitarbeiter/buchmann.html,,False,Johannes Buchmann
+29,Dr.,Sonja,Palfner,,,http://www.ifs.tu-darmstadt.de/index.php?id=2576,,False,Sonja Palfner
+30,Dr.,Astrid,Schwarz,,,http://www.philosophie.tu-darmstadt.de/institut/mitarbeiterinnen_1/mitarbeiter_1/schwarz/aktuelleforschungsschwerpunkte_10.de.jsp,,False,Astrid Schwarz
+31,M.A.,Sandra,Hofhues,,Universität Augsburg,,,False,Sandra Hofhues
+32,Dr.,Cornelia,Vismann,,Max-Planck-Institut für europäische Rechtsgeschichte,,,False,Cornelia Vismann
+33,Dr.,Aljoscha,Burchardt,,,http://www.cre-elearning.tu-darmstadt.de/burchardt,,False,Aljoscha Burchardt
+34,Dr.,Wolfram,Heger,,Daimler,,,False,Wolfram Heger
+35,Prof. Dr.,Joachim,Enders,enders@ikp.tu-darmstadt.de,,,,"<img src=""https://openlearnware.de/olw-rest-db/api/user/35/photo"">",Joachim Enders
+36,Prof. Dr.,Franz,Bockrath,,,http://www.sport.tu-darmstadt.de/sportinstitut/personal/professoren/bockrath_seiten/bockrath_profil.de.jsp,,"<img src=""https://openlearnware.de/olw-rest-db/api/user/36/photo"">",Franz Bockrath
+37,,Jan C.,Schmidt,,Hochschule Darmstadt,http://www.suk.h-da.de/index.php?id=schmidt,,False,Jan C. Schmidt
+38,PD Dr.,Claus,Zittel,,,,,False,Claus Zittel
+39,Prof. Dr.,Alfred,Nordmann,,,http://www.philosophie.tu-darmstadt.de/institut/mitarbeiterinnen_1/professoren/a_nordmann/index.de.jsp,,False,Alfred Nordmann
+40,Dr.,Andreas,Gelhard,,,http://www.philosophie.tu-darmstadt.de/institut/mitarbeiterinnen_1/mitarbeiter_1/gelhard/obligatorischeangaben.de.jsp,,False,Andreas Gelhard
+41,Prof.,Ulrich,Schrader,,FH Frankfurt am Main,http://info.ulrich-schrader.de/,,False,Ulrich Schrader
+42,Prof. Dr.,Jakob,Tanner,,Universität Zürich,http://www.fsw.uzh.ch/page/mitarbeiter-portrait.php?id=4,,False,Jakob Tanner
+43,Prof. Dr.,Gernot,Böhme,,,http://www.ifs.tu-darmstadt.de/fileadmin/gradkoll/Personen/Prof_BoehmeG.html,,False,Gernot Böhme
+44,Prof. Dr.-Ing.,Ralph,Bruder,,,http://www.maschinenbau.tu-darmstadt.de/fachbereich/professoren/index.de.jsp,,False,Ralph Bruder
+45,Prof. Dr. Dr.,Kristian,Köchy,,Universität Kassel,http://www.uni-kassel.de/~koechy/,,False,Kristian Köchy
+46,,Klaus,Mainzer,,,,,False,Klaus Mainzer
+47,Prof. Dr.,Christiane,Funken,,Universität Berlin,http://www.tu-berlin.de/?id=76082,,False,Christiane Funken
+48,Prof. Dr.,Christian,Meyer,,,http://www.graduate-school-ce.de/index.php?id=128,,False,Christian Meyer
+49,, Michel,Michiels-Corsten,,"Projekt MyPaed, TU Darmstadt",,,False, Michel Michiels-Corsten
+50,,Sophie,Schaper,,"Projekt MyPaed, TU Darmstadt",,,False,Sophie Schaper
+51,Prof. Dr.,Kurt,Röttgers,,FernUniversität Hagen,http://www.fernuni-hagen.de/roettgers/,,False,Kurt Röttgers
+52,Prof. Dr.,Julika,Griem,,,http://www.linglit.tu-darmstadt.de/index.php?id=griem,,False,Julika Griem
+53,Dr.,Konrad,Faber,,Virtueller Campus Rheinland Pfalz,,,False,Konrad Faber
+54,,Klaus-Michael,Kodalle,,,,,False,Klaus-Michael Kodalle
+55,Dr.,Gerhard,Prätorius,,Volkswagen,,,False,Gerhard Prätorius
+56,Prof. Dr.-Ing.,Karsten,Tichelmann,,,http://www.twe.architektur.tu-darmstadt.de/twe/twe_kontakte/mitarbeiter_twe_details_21.de.jsp,,False,Karsten Tichelmann
+57,,Moritz,Epple,,,,,False,Moritz Epple
+58,Prof. Dr.,Paul,Ziche,,Universität Utrecht (Niederlande),http://www.uu.nl/hum/staff/PGZiche/0,,False,Paul Ziche
+59,Prof.,Johannes,Preuß,,Johannes Gutenberg Universität Mainz,,,False,Johannes Preuß
+60,Ass. Dr.,Mechthild,Hetzel,,Universität Innsbruck,,,False,Mechthild Hetzel
+61,Prof. Dr.,Petra,Gehring,,,http://www.philosophie.tu-darmstadt.de/institut/mitarbeiterinnen_1/professoren/gehring/gehring_2.de.jsp,"Petra Gehring, Prof. Dr. phil., studierte Philosophie, Politikwissenschaften und Rechtswissenschaft in Gießen, Marburg und Bochum. Magister 1988, Promotion 1992, Habilitation 2000. Forschung und Lehre an den Universitäten Bochum und Hagen. Seit 2002 ist sie Professorin für Philosophie an der TU Darmstadt.","<img src=""https://openlearnware.de/olw-rest-db/api/user/61/photo"">",Petra Gehring
+62,Prof. Dr.,Peter,Niesen,,,http://www.politikwissenschaft.tu-darmstadt.de/index.php?id=pw_niesen,,False,Peter Niesen
+63,Prof.,Gerhard,Gamm,,,,,False,Gerhard Gamm
+64,,Ralf,Krause,,,,,False,Ralf Krause
+65,Dr.,Julia,Sonnberger,,,,,False,Julia Sonnberger
+66,Dr.,Martin,Heinebrodt,,Robert Bosch GmbH,,,False,Martin Heinebrodt
+67,Dr.,Sebastian,Pokutta,,,http://www3.mathematik.tu-darmstadt.de/index.php?id=261,,False,Sebastian Pokutta
+68,Dr.,Lars,Schewe,,,http://www3.mathematik.tu-darmstadt.de/index.php?id=261,,False,Lars Schewe
+69,Dr.,Andreas,Großmann,,Universität Hamburg,http://www.theologie.uni-hamburg.de/ist/grossmann.html,,False,Andreas Großmann
+70,M.sc.,Roland,Roth-Steiner,,,http://tuprints.ulb.tu-darmstadt.de/contact.html,,False,Roland Roth-Steiner
+71,Dr.,Andreas,Woyke,,,http://www.philosophie.tu-darmstadt.de/institut/mitarbeiterinnen_1/lehrbeauftragte/woyke_1/aktuelleforschungsschwerpunkte_16.de.jsp,,False,Andreas Woyke
+72,Prof. Dr.,Frank,Hänsel,,,http://www.sport.tu-darmstadt.de/sportinstitut/personal/professoren/haensel_seiten/haensel_profil.de.jsp,,False,Frank Hänsel
+73,Prof. Dr.,Klaus Dieter,Wolf,,,http://www.politikwissenschaft.tu-darmstadt.de/index.php?id=213,,False,Klaus Dieter Wolf
+74,Prof. Dr.-Ing.,Ralf,Steinmetz,,,http://www.kom.tu-darmstadt.de/en/kom-multimedia-communications-lab/people/staff/ralf-steinmetz/?no_cache=1,,False,Ralf Steinmetz
+75,Dr.,Reiner,Höger,,Continental Automotive GmbH,,,False,Reiner Höger
+76,Dr.,Robert,Haller-Dintelmann,haller@mathematik.tu-darmstadt.de,,http://www3.mathematik.tu-darmstadt.de/ags/analysis/ag-angewandte-analysis/personen/haller-dintelmann-robert.html,,False,Robert Haller-Dintelmann
+77,Prof. Dr.,Christoph,Hubig,,,http://www.philosophie.tu-darmstadt.de/institut/mitarbeiterinnen_1/professoren/hubig/aktuelleforschungsschwerpunkte_21.de.jsp,,False,Christoph Hubig
+78,,Andreas,Fromkorth,,,http://www3.mathematik.tu-darmstadt.de/index.php?id=253,,False,Andreas Fromkorth
+79,,Ingrid,Dethloff,,"E-Learning Center, Universität Heidelberg",,,False,Ingrid Dethloff
+80,,Alexander,Pannhorst,,MeinProf e.V.,,,False,Alexander Pannhorst
+81,Dr.,Andreas,Kaminski,,,http://www.philosophie.tu-darmstadt.de/institut/mitarbeiterinnen_1/mitarbeiter_1/kaminski/Profilseite-Andreas-Kaminski.de.jsp,,False,Andreas Kaminski
+82,Dr.,Knut,Ebeling,,Humboldt-Universität zu Berlin,http://www.aesthetik.hu-berlin.de/mitarbeiter/ebeling/index.php,,False,Knut Ebeling
+83,,Gregor,Schiemann,,,,,False,Gregor Schiemann
+84,Prof.,Simon,Schaffer,,University of Cambridge,http://www.hps.cam.ac.uk/people/schaffer/,,False,Simon Schaffer
+85,Dr.,Rüdiger,Zill,,Einsteinforum Potsdam,http://www.einsteinforum.de/index.php?id=104&type=98,,False,Rüdiger Zill
+86,M.A.,Thomas,Trebing,,,,,False,Thomas Trebing
+87,Prof. Dr.,Max,Mühlhäuser,,,http://www.kom.tu-darmstadt.de/en/kom-multimedia-communications-lab/people/staff/ralf-steinmetz/?no_cache=1,,False,Max Mühlhäuser
+88,,Walter Ch.,Zimmerli,,Brandenburgische Technische Universität Cottbus,http://idw-online.de/pages/de/news197804,,False,Walter Ch. Zimmerli
+89,,Lucia,Panizzi,,,http://www.graduate-school-ce.de/index.php?id=128,,False,Lucia Panizzi
+90,Dr.,Sabine,Lutz,,Robert Bosch GmbH,,,False,Sabine Lutz
+91,Dr.,Cheryce von,Xylander,,,"http://www.philosophie.tu-darmstadt.de/institut/mitarbeiterinnen_1/mitarbeiter_1/vonxylander/start_vonxylander.de.jsp, http://www.philosophie.tu-darmstadt.de/institut/mitarbeiterinnen_1/professoren/a_nordmann/index.de.jsp",,False,Cheryce von Xylander
+92,Prof. Dr.,Regina,Bruder,,"FB Mathematik, TU Darmstadt",,,False,Regina Bruder
+93,,Nicole,Nowak,,,http://www3.mathematik.tu-darmstadt.de/index.php?id=261,,False,Nicole Nowak
+94,Prof. Dr.,Eve-Marie,Engels,,Universität Tübingen,http://www.uni-tuebingen.de/fakultaeten/philosophische-fakultaet/fachbereiche/philosophie-rhetorik-medien/philosophisches-seminar/mitarbeiter/prof-dr-eve-marie-engels.html,,False,Eve-Marie Engels
+95,Dr.,Jens,Kertscher,,,http://www.philosophie.tu-darmstadt.de/institut/mitarbeiterinnen_1/mitarbeiter_1/kertscher/oblig.de.jsp,,False,Jens Kertscher
+96,Prof. Dr.,Klaus,Wiegerling,,Universität Stuttgart,http://www.uni-stuttgart.de/philo/index.php?id=72,,False,Klaus Wiegerling
+97,,Andreas,Hetzel,,,,,False,Andreas Hetzel
+98,Prof. Dr.-Ing.,Jörg,Lange,,,http://www.stahlbau.tu-darmstadt.de/fachgebiet/personen/mitarbeiter_details_stahlbau_3905.de.jsp,,False,Jörg Lange
+99,Dipl.-Ing.,Heiko,Merle,,,http://www.stahlbau.tu-darmstadt.de/fachgebiet/personen/mitarbeiter_details_stahlbau_3904.de.jsp,,False,Heiko Merle

@@ -5,21 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cc90bc2e-1463-4020-91bb-d67006a6d158" name="Changes" comment="1.) Der Zielordner in Panopto lässt sich nun mithilfe von panoptoDestinationFolderFinder.py finden">
-      <change afterPath="$PROJECT_DIR$/Testskripte/Book1.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Testskripte/csv_writer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Testskripte/newfile.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_02_2023_11_24__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_02_2023_11_24__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_02_2023_11_43__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_02_2023_11_43__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_01_2023_13_16__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_01_2023_13_16__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ExportAsCSV_Algo/images of profs/export_pictures.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OtherCSVData/profs.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OtherCSVData/profs_formated.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/panoptoAutomatedUpload.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/panoptoAutomatedUpload.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Arbeitsplan.md" beforeDir="false" afterPath="$PROJECT_DIR$/Arbeitsplan.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ExportAsCSV_Algo/export.py" beforeDir="false" afterPath="$PROJECT_DIR$/ExportAsCSV_Algo/export.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ExportAsCSV_Algo/mycsvfile.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExportAsCSV_Algo/mycsvfile.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ExportAsCSV_Algo/olw_ressources.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExportAsCSV_Algo/olw_ressources.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Testskripte/token_test-tu-darmstadt.cloud.panopto.eu_368929b5-aabf-4e43-9bc0-af82009ab95c.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Testskripte/token_test-tu-darmstadt.cloud.panopto.eu_368929b5-aabf-4e43-9bc0-af82009ab95c.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Testskripte/upload_manifest_generated.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Testskripte/upload_manifest_generated.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VideoMetadataXML/upload_manifest_generated.xml" beforeDir="false" afterPath="$PROJECT_DIR$/VideoMetadataXML/upload_manifest_generated.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/publicAPI/token_test-tu-darmstadt.cloud.panopto.eu_368929b5-aabf-4e43-9bc0-af82009ab95c.cache" beforeDir="false" afterPath="$PROJECT_DIR$/publicAPI/token_test-tu-darmstadt.cloud.panopto.eu_368929b5-aabf-4e43-9bc0-af82009ab95c.cache" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +56,7 @@
     <property name="ToolWindowRun.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File" value="Markdown" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../OneDrive - stud.tu-darmstadt.de/Lehre und Arbeit/HRZ Hiwi/OLW Panopto/export.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/ExportAsCSV_Algo/images of profs" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -71,15 +64,18 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\domin\panoptoAutomatedUpload\ExportAsCSV_Algo\images of profs" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\domin\panoptoAutomatedUpload\OtherCSVData" />
       <recent name="C:\Users\Abdulhaq\PycharmProjects\panoptoProjekt\Assets" />
       <recent name="C:\Users\Abdulhaq\PycharmProjects\panoptoProjekt\OtherCSVData" />
       <recent name="C:\Users\Abdulhaq\PycharmProjects\panoptoProjekt" />
       <recent name="C:\Users\Abdulhaq\PycharmProjects\panoptoProjekt\Testskripte" />
-      <recent name="C:\Users\Abdulhaq\PycharmProjects\panoptoProjekt\ExportAsCSV_Algo" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.TestCollection">
+  <component name="RunManager" selected="Python.export (2)">
     <configuration name="TestCollection" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="panoptoAutomatedUpload" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -124,6 +120,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="export_pictures" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="panoptoAutomatedUpload" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ExportAsCSV_Algo/images of profs" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ExportAsCSV_Algo/images of profs/export_pictures.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="folderNameExtraction (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="panoptoAutomatedUpload" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -138,28 +156,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/folderNameExtraction.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="folderNameExtraction" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="panoptoAutomatedUpload" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\Users\Abdulhaq\PycharmProjects\panoptoProjekt\folderNameExtraction.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -192,11 +188,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.TestCollection" />
         <item itemvalue="Python.export (2)" />
+        <item itemvalue="Python.export_pictures" />
+        <item itemvalue="Python.TestCollection" />
         <item itemvalue="Python.mainTest" />
         <item itemvalue="Python.folderNameExtraction (1)" />
-        <item itemvalue="Python.folderNameExtraction" />
       </list>
     </recent_temporary>
   </component>
@@ -214,7 +210,8 @@
       <workItem from="1674207926274" duration="5127000" />
       <workItem from="1674724485400" duration="4390000" />
       <workItem from="1674731264385" duration="2985000" />
-      <workItem from="1677143820308" duration="1230000" />
+      <workItem from="1677143820308" duration="2990000" />
+      <workItem from="1677226994042" duration="6277000" />
     </task>
     <task id="LOCAL-00001" summary="Skripts umsortiert und neue Ordner geschaffen.&#10;&#10;Arbeitsplan aka. die nächsten Schritte festgelegt.">
       <created>1674824070656</created>
@@ -277,5 +274,9 @@
     <MESSAGE value="1.) Beispielvideo testvideo.mp4 und Beispielpdf tuda_logo.pdf in einen Assets Ordner geschoben zur Herstellung von Übersichtlichtkeit." />
     <MESSAGE value="1.) Der Zielordner in Panopto lässt sich nun mithilfe von panoptoDestinationFolderFinder.py finden" />
     <option name="LAST_COMMIT_MESSAGE" value="1.) Der Zielordner in Panopto lässt sich nun mithilfe von panoptoDestinationFolderFinder.py finden" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/panoptoAutomatedUpload$export_pictures.coverage" NAME="export_pictures Coverage Results" MODIFIED="1677233748553" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ExportAsCSV_Algo/images of profs" />
+    <SUITE FILE_PATH="coverage/panoptoAutomatedUpload$export__2_.coverage" NAME="export (2) Coverage Results" MODIFIED="1677234246988" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ExportAsCSV_Algo" />
   </component>
 </project>

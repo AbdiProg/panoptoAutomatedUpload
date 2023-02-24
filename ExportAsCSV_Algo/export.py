@@ -7,6 +7,9 @@ from dicttoxml import dicttoxml
 import xml.etree.ElementTree as Xet
 import csv
 
+import requests # request img from web
+import shutil # save img locally
+
 urls = {
     'api': 'https://openlearnware.tu-darmstadt.de/olw-rest-db/api',
     'collectionIds': '/collection-overview/filter/index/all?pick=id&pick=name',
@@ -14,6 +17,7 @@ urls = {
     'resources': '/resource-overview/filter/index/all?deleted=false',
     'rawFiles': 'https://olw-material.hrz.tu-darmstadt.de/olw-roh-repository/archive/',
     'convFiles': 'https://olw-material.hrz.tu-darmstadt.de/olw-konv-repository/material/',
+    'profs': 'https://openlearnware.de/olw-rest-db/api/user/'
 }
 #https://openlearnware.de/olw-rest-db/api/user/ für die Information zu den Professoren
 
@@ -32,7 +36,7 @@ def get_resources():
 
 resources = [r for r in get_resources() if not r['deleted'] and r['name']]
 
-print(json.dumps(resources, indent=10, sort_keys=True))
+#print(json.dumps(resources, indent=10, sort_keys=True))
 
 # for r in resources:
 #     uuidPath = '/'.join(wrap(r['uuid'].replace('-', ''), 2))
@@ -70,7 +74,34 @@ print(json.dumps(resources, indent=10, sort_keys=True))
 
 #methode für das Überschreiben der csv nach dem Upload:
 
-test = get_collection(78)
+#test = get_collection(78)
 
 #print(test)
-print(json.dumps(test, indent=10, sort_keys=True))
+#print(json.dumps(test, indent=10, sort_keys=True))
+
+
+
+def get_prof(id):
+    response = requests.get(f'{urls["profs"]}{id}')
+    json_file = json.loads(response.text)
+    if json_file['photoAvailable'] == True:
+        json_file['photoAvailable'] = '<img src="'+'https://openlearnware.de/olw-rest-db/api/user/' +str(id)+'/photo'+'">'
+    return json_file
+
+
+for i in range(365):
+    file = get_prof(i+1)
+# #writes all metadata in csv table
+    with open('../OtherCSVData/profs.csv', 'a') as f:  # You will need 'wb' mode in Python 2.x
+        w = csv.DictWriter(f, file.keys())
+        if f.tell() == 0:
+            w.writeheader()
+        w.writerow(file)
+
+    #removes the empty rows of the csv table
+    with open('../OtherCSVData/profs.csv', newline='') as in_file:
+        with open('../OtherCSVData/profs_formated.csv', 'w', newline='') as out_file:
+            writer = csv.writer(out_file)
+            for row in csv.reader(in_file):
+                if any(row):
+                    writer.writerow(row)

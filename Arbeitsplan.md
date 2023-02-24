@@ -42,7 +42,17 @@ Problem: Wie verknüpft man diesen wordpress Beiträg auf den anderen?
 
 Alle Infos von https://openlearnware.de/olw-rest-db/api/user/61, https://openlearnware.de/olw-rest-db/api/user/1/photo
 
-- Foto
-- Name
-- Beschreibung
+- Foto: muss über ID mit neuem Link abgefragt werden und dann per html eingefügt
+- Name: String aus title + firstName + lastName
+- website: Website
+- Beschreibung: about info
+- Organization: 
 - ID
+
+Mergen von Tabellen: die beiden Tabellen müssen über die ID der Profs gemerged werden, damit man nachher den korrekten Wordpress Link zum Professoren Profil in den Beiträgen anhängen kann
+
+Vorgehensweise: 
+1.Erstelle Professoren Beiträge auf Wordpress über import
+2.Exportiere diese Beiträge um die Links zu bekommen
+3.Merge Professoren export mit import
+4.Merge die Tabelle aus 3. mit der Tabelle der Beiträge über Prof ID
