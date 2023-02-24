@@ -1,8 +1,6 @@
-import folderNameExtraction
+from FolderStructureCreation import folderNameExtraction
 from UploadAndAuthentificationPanopto_Algo.panopto_oauth2 import PanoptoOAuth2
 from panoptoDestinationFolderFinder import PanoptoFolderFinder
-from panoptoFolderStructureCreation import FolderStructureCreation
-from uploadFromLink import UploadFromOLW
 
 url = "https://olw-material.hrz.tu-darmstadt.de/olw-konv-repository/material/68/d1/16/30/b9/21/11/e4/ae/75/00/50/56/bd/73/ad"
 main_url = "https://olw-material.hrz.tu-darmstadt.de"

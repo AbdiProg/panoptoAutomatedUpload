@@ -20,7 +20,9 @@ class FileChooser:
         "106.webm",
         "105.webm"
     ]
-
+    slideEndings = [
+        ""
+    ]
     slideEndings = [
         ""
     ]

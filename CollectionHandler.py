@@ -1,3 +1,4 @@
+import ctypes
 from textwrap import wrap
 
 import requests
@@ -110,13 +111,13 @@ def get_singleResource(jsonData, element):
     return tmpLearningUnitObjectOrResource
 
 
-def get_singleResource2(jsonData, element):
+def get_singleResource2(jsonData, element): #For Multiple Resources
     uuidPath = '/'.join(wrap(jsonData["resources"][str(element)]['uuid'].replace('-', ''), 2))
     link = f'{urls["convFiles"]}{uuidPath}'
 
     resourceJson = jsonData["resources"][str(element)]
-    resourceLicense = jsonData["resources"][str(element)]["license"]["code"]
-    resourceType = jsonData["resources"][str(element)]["type"]
+    resourceLicense = resourceJson["license"]["code"]
+    resourceType = resourceJson["type"]
 
     return Resource(resourceType, link, resourceLicense)
 
@@ -137,7 +138,10 @@ def get_lectureUnits(jsonData):
             tmpLearningUnitObject = LearningUnit(learningUnitName, "", resources, lectureUnitLecturers)
             lectureUnitObjects.append(tmpLearningUnitObject)
         else:
-            tmpLearningUnitObject = get_singleResource(jsonData, element)
+            learningUnitName = jsonData["resources"][str(element)]["name"]
+            lectureUnitLecturers = get_lecturers(jsonData["resources"][str(element)])
+            resources = [get_singleResource2(jsonData, str(element))]
+            tmpLearningUnitObject = LearningUnit(learningUnitName, "", resources, lectureUnitLecturers)
             lectureUnitObjects.append(tmpLearningUnitObject)
 
     return lectureUnitObjects
@@ -151,7 +155,7 @@ def get_informationOfAllCollections():
         singleCollection = get_collection(collection['id'])
         lectureName = singleCollection["name"]
         lectureDescription = singleCollection["description"]
-        lectureLearningUnits = []
+        lectureLearningUnits = get_lectureUnits(singleCollection)
         lectureLecturers = get_lecturers(singleCollection)
         lectureAreas = get_areas(singleCollection)
         lectureSemesterValue = singleCollection["semester"]["value"]
@@ -171,7 +175,7 @@ def get_informationOfAllCollections():
 
 
 # Collection-Test
-responseJson = get_collection(42)
+responseJson = get_collection(78)
 #print(responseJson["collectionElements"])  #
 print(get_lectureUnits(responseJson))
 #print(responseJson["rubrics"]["867"]["name"])
