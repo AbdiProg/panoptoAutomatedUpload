@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Session xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://tempuri.org/UniversalCaptureSpecification/v1">
-  <Title>{Title}</Title>
-  <Description>{Description}</Description>
-  <Date>{Date}</Date>
+  <Title>Menschengerechte Arbeits- und Produktinosgestaltung in internationalen Wertschöpfungsketten</Title>
+  <Description>TestBeschreibung</Description>
+  <Date>2023-02-28T15:06:35.280438-00:00</Date>
   <ThumbnailTime>PT5S</ThumbnailTime>
   <Videos>
     <Video>
       <Start>PT0S</Start>
-      <File>{Filename}</File>
+      <File>2.mp4</File>
       <Type>Primary</Type>
     </Video>
   </Videos>

@@ -18,11 +18,12 @@ PART_SIZE = 20 * 1024 * 1024
 
 # Template for manifest XML file.
 MANIFEST_FILE_TEMPLATE = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'VideoMetadataXML','upload_manifest_template.xml').replace("\\","/")
+MANIFEST_FILE_TEMPLATE_PDF = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'VideoMetadataXML','upload_manifest_template_with_pdf.xml').replace("\\","/")
 #MANIFEST_FILE_TEMPLATE = 'C:/Users/Abdulhaq/PycharmProjects/panoptoProjekt/VideoMetadataXML/upload_manifest_template_withoutpdf.xml'
 
 # Filename of manifest XML file. Any filename is acceptable.
 MANIFEST_FILE_NAME = 'upload_manifest_generated.xml'
-
+MANIFEST_FILE_NAME_PDF = 'upload_manifest_generated_with_pdf.xml'
 
 class PanoptoUploader:
     def __init__(self, server, ssl_verify, oauth2, videoTitle, videoDescription):
@@ -90,8 +91,9 @@ class PanoptoUploader:
         if pdffile_path != "": self.__multipart_upload_single_fileBYURL(upload_target, pdffile_path)
 
         # step 3 - create manifest file and uplaod it
-        self.__create_manifest_for_video(file_path, pdffile_path, MANIFEST_FILE_NAME)
-        self.__multipart_upload_single_fileONDISK(upload_target, MANIFEST_FILE_NAME)
+        if pdffile_path != "": self.__create_manifest_for_video(file_path, pdffile_path, MANIFEST_FILE_NAME_PDF)
+        else: self.__create_manifest_for_video(file_path, pdffile_path, MANIFEST_FILE_NAME)
+        #self.__multipart_upload_single_fileONDISK(upload_target, MANIFEST_FILE_NAME)
 
         # step 4 - finish the upload
         self.__finish_upload(session_upload)
@@ -315,7 +317,6 @@ class PanoptoUploader:
             print('Calling GET PublicAPI/REST/sessionUpload/{0} endpoint'.format(upload_id))
             url = 'https://{0}/Panopto/PublicAPI/REST/sessionUpload/{1}'.format(self.server, upload_id)
             resp = self.requests_session.get(url=url)
-            print(3)
             if self.__inspect_response_is_retry_needed(resp):
                 # If we get Unauthorized and token is refreshed, ignore the response at this time and wait for next time.
                 continue

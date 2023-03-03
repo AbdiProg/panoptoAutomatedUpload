@@ -21,10 +21,7 @@ class FileChooser:
         "105.webm"
     ]
     slideEndings = [
-        ""
-    ]
-    slideEndings = [
-        ""
+        "13.pdf"
     ]
 
     def __init__(self, url, main_url):
@@ -43,7 +40,12 @@ class FileChooser:
                 if linkStr.__contains__(ending):
                     return self.main_url+link
 
-
+    def getSlideLink(self):
+        for ending in self.slideEndings:
+            for link in self.parent:
+                linkStr = str(link)
+                if linkStr.__contains__(ending):
+                    return self.main_url + link
 # def getSlidesLink(self):
 
 """

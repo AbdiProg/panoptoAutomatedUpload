@@ -2,7 +2,8 @@ import json
 
 import requests
 
-#This Class provides 2 methods to find a destination over 2 layers of folders
+
+# This Class provides 2 methods to find a destination over 2 layers of folders
 class PanoptoFolderFinder:
 
     def __init__(self, meta_folder_id, oauth2):
@@ -18,8 +19,7 @@ class PanoptoFolderFinder:
                                          "0}/children".format(self.meta_folder_id))
         responseJson = resp.json()
 
-
-        for i in range (0, len(responseJson['Results'])):
+        for i in range(0, len(responseJson['Results'])):
             if responseJson['Results'][i]['Name'] == semesterStr:
                 return responseJson['Results'][i]['Id']
 
