@@ -91,9 +91,12 @@ class PanoptoUploader:
         if pdffile_path != "": self.__multipart_upload_single_fileBYURL(upload_target, pdffile_path)
 
         # step 3 - create manifest file and uplaod it
-        if pdffile_path != "": self.__create_manifest_for_video(file_path, pdffile_path, MANIFEST_FILE_NAME_PDF)
-        else: self.__create_manifest_for_video(file_path, pdffile_path, MANIFEST_FILE_NAME)
-        #self.__multipart_upload_single_fileONDISK(upload_target, MANIFEST_FILE_NAME)
+        if pdffile_path != "":
+            self.__create_manifest_for_video(file_path, pdffile_path, MANIFEST_FILE_NAME_PDF)
+            self.__multipart_upload_single_fileONDISK(upload_target, MANIFEST_FILE_NAME_PDF)
+        else:
+            self.__create_manifest_for_video(file_path, pdffile_path, MANIFEST_FILE_NAME)
+            self.__multipart_upload_single_fileONDISK(upload_target, MANIFEST_FILE_NAME)
 
         # step 4 - finish the upload
         self.__finish_upload(session_upload)
@@ -262,11 +265,18 @@ class PanoptoUploader:
 
         file_name = os.path.basename(file_path)
         pdffile_name = os.path.basename(pdffile_path)
-
-        with open(MANIFEST_FILE_TEMPLATE) as fr:
-            template = fr.read()
-            content = ""
-            if pdffile_path != "":
+        content = ""
+        if pdffile_path == "":
+            with open(MANIFEST_FILE_TEMPLATE) as fr:
+                template = fr.read()
+                content = template \
+                    .replace('{Title}', self.videoTitle) \
+                    .replace('{Description}', self.videoDescription) \
+                    .replace('{Filename}', file_name) \
+                    .replace('{Date}', datetime.now().strftime("%Y-%m-%dT%H:%M:%S.%f-00:00"))
+        else:
+            with open(MANIFEST_FILE_TEMPLATE_PDF) as fr:
+                template = fr.read()
                 content = template \
                     .replace('{Title}', self.videoTitle) \
                     .replace('{Description}', self.videoDescription) \
@@ -274,12 +284,6 @@ class PanoptoUploader:
                     .replace('{Date}', datetime.now().strftime("%Y-%m-%dT%H:%M:%S.%f-00:00")) \
                     .replace('{Presentationname}', pdffile_name) \
                     .replace('{MimeType}', "pdf")
-            else:
-                content = template \
-                    .replace('{Title}', self.videoTitle) \
-                    .replace('{Description}', self.videoDescription) \
-                    .replace('{Filename}', file_name) \
-                    .replace('{Date}', datetime.now().strftime("%Y-%m-%dT%H:%M:%S.%f-00:00"))
 
         with codecs.open(manifest_file_name, 'w', 'utf-8') as fw:
             fw.write(content)
@@ -324,7 +328,7 @@ class PanoptoUploader:
 
             print('  State: {0}'.format(session_upload['State']))
 
-            if session_upload['State'] == 4:
+            if session_upload['State'] == 4 or session_upload['State'] == 3:
                 sessionID = session_upload['SessionId']
                 print(sessionID)
                 # Complete

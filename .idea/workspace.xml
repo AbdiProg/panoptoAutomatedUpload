@@ -4,20 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cc90bc2e-1463-4020-91bb-d67006a6d158" name="Changes" comment="Umsortierung">
-      <change afterPath="$PROJECT_DIR$/VideoMetadataXML/upload_manifest_template_with_pdf.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/upload_manifest_generated.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/upload_manifest_generated_with_pdf.xml" afterDir="false" />
+    <list default="true" id="cc90bc2e-1463-4020-91bb-d67006a6d158" name="Changes" comment="Kleine Änderungen in MainTest">
+      <change afterPath="$PROJECT_DIR$/uploadFromOLW.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CollectionHandler.py" beforeDir="false" afterPath="$PROJECT_DIR$/CollectionHandler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tools/FileChooser.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tools/FileChooser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Objects/LearningUnit.py" beforeDir="false" afterPath="$PROJECT_DIR$/Objects/LearningUnit.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Objects/Lecture.py" beforeDir="false" afterPath="$PROJECT_DIR$/Objects/Lecture.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Objects/Resource.py" beforeDir="false" afterPath="$PROJECT_DIR$/Objects/Resource.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testskripte/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Testskripte/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UploadAndAuthentificationPanopto_Algo/panopto_uploaderConstruct.py" beforeDir="false" afterPath="$PROJECT_DIR$/UploadAndAuthentificationPanopto_Algo/panopto_uploaderConstruct.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VideoMetadataXML/upload_manifest_generated.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/VideoMetadataXML/upload_manifest_template.xml" beforeDir="false" afterPath="$PROJECT_DIR$/VideoMetadataXML/upload_manifest_template.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mainTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainTest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panoptoDestinationFolderFinder.py" beforeDir="false" afterPath="$PROJECT_DIR$/panoptoDestinationFolderFinder.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/publicAPI/panopto_oauth2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/publicAPI/sample.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/publicAPI/token_test-tu-darmstadt.cloud.panopto.eu_368929b5-aabf-4e43-9bc0-af82009ab95c.cache" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/token_test-tu-darmstadt.cloud.panopto.eu_5aff5849-cfaa-4176-8a79-af82009b4df3.cache" beforeDir="false" afterPath="$PROJECT_DIR$/token_test-tu-darmstadt.cloud.panopto.eu_5aff5849-cfaa-4176-8a79-af82009b4df3.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/uploadFromLink.py" beforeDir="false" afterPath="$PROJECT_DIR$/uploadFromLink.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/upload_manifest_generated.xml" beforeDir="false" afterPath="$PROJECT_DIR$/upload_manifest_generated.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/upload_manifest_generated_with_pdf.xml" beforeDir="false" afterPath="$PROJECT_DIR$/upload_manifest_generated_with_pdf.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,10 +55,10 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/ExportAsCSV_Algo/export.py" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/FolderStructureCreation/folderNameExtraction.py" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Objects/Lecturer.py" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Objects/Resource.py" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CollectionHandler.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/FolderStructureCreation/folderNameExtraction.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Objects/Resource.py" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Objects/LearningUnit.py" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Objects/Lecture.py" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/mainTest.py" root0="FORCE_HIGHLIGHTING" />
@@ -92,7 +95,28 @@
       <recent name="C:\Users\Abdulhaq\PycharmProjects\panoptoProjekt" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.mainTest">
+  <component name="RunManager" selected="Python.CollectionHandler (1)">
+    <configuration name="CollectionHandler (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="panoptoAutomatedUpload" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/CollectionHandler.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="CollectionHandler" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="panoptoAutomatedUpload" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -200,6 +224,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.CollectionHandler (1)" />
         <item itemvalue="Python.mainTest" />
         <item itemvalue="Python.CollectionHandler" />
         <item itemvalue="Python.export (2)" />

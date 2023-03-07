@@ -2,7 +2,7 @@ import csv
 import urllib
 from urllib.request import urlopen
 
-from uploadFromLink import UploadFromOLW
+from uploadFromLink import UploadFromLink
 
 #uploader = UploadFromOLW("")
 

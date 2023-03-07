@@ -9,4 +9,4 @@ class Lecture:
         self.semesterValue = semesterValue
 
     def __str__(self):
-        return self.name + " : " + self.description + " : " + self.areas + " : " + self.semesterValue
+        return self.name + " : " + self.description + " : "  + self.semesterValue

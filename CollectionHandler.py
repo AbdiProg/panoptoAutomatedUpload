@@ -97,6 +97,16 @@ def get_lecturers(jsonData):
     return userObjects
 
 
+jsonOfAllResources = get_resources()
+def get_resourceDescription(uuid):
+    array2 = jsonOfAllResources
+    filtered_list = [
+        resource for resource in array2
+        if resource['uuid'] == uuid
+    ]
+    return filtered_list[0]['description']
+
+
 def get_singleResource2(jsonData, element):
     uuidPath = '/'.join(wrap(jsonData["resources"][str(element)]['uuid'].replace('-', ''), 2))
     link = f'{urls["convFiles"]}{uuidPath}'
@@ -104,8 +114,8 @@ def get_singleResource2(jsonData, element):
     resourceJson = jsonData["resources"][str(element)]
     resourceLicense = resourceJson["license"]["code"]
     resourceType = resourceJson["type"]
-
-    return Resource(resourceType, link, resourceLicense)
+    #resourceDescription =
+    return Resource(resourceType, link, resourceLicense, get_resourceDescription(jsonData["resources"][str(element)]['uuid']))
 
 
 def get_lectureUnits(jsonData):
@@ -122,13 +132,13 @@ def get_lectureUnits(jsonData):
             for resource in rubricJson["resources"]:
                 resources.append(get_singleResource2(jsonData, str(resource)))
 
-            tmpLearningUnitObject = LearningUnit(learningUnitName, "", resources, lectureUnitLecturers)
+            tmpLearningUnitObject = LearningUnit(learningUnitName, resources, lectureUnitLecturers)
             lectureUnitObjects.append(tmpLearningUnitObject)
         else:
             learningUnitName = jsonData["resources"][str(element)]["name"]
             lectureUnitLecturers = get_lecturers(jsonData["resources"][str(element)])
             resources = [get_singleResource2(jsonData, str(element))]
-            tmpLearningUnitObject = LearningUnit(learningUnitName, "", resources, lectureUnitLecturers)
+            tmpLearningUnitObject = LearningUnit(learningUnitName, resources, lectureUnitLecturers)
             lectureUnitObjects.append(tmpLearningUnitObject)
 
     return lectureUnitObjects
@@ -165,6 +175,8 @@ def get_informationOfAllCollections():
                              lectureSemesterValue)
         lectures.append(tmpLecture)
 
+    return lectures
+
 
 # print(get_collection(78))
 # print(json.dumps(get_collection(42), indent=6, sort_keys=True))
@@ -192,3 +204,7 @@ for lec in get_lectureUnits(responseJson):
 # print(json.dumps(get_collection(42), indent=6, sort_keys=True))
 # print(checkIfCollectionElementIsInRubric('191', responseJson["rubrics"])) #Geht!
 """
+
+responseJson = get_collection(373)
+print(json.dumps(responseJson, indent=6, sort_keys=True))
+print(get_informationOfCollection("373").learningUnits[2].resources[0])

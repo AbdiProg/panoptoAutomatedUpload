@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Session xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://tempuri.org/UniversalCaptureSpecification/v1">
-  <Title>Lernen und Arbeiten im Stahlbau-Wiki</Title>
-  <Description></Description>
-  <Date>2023-02-28T14:09:27.962128-00:00</Date>
+  <Title>Menschengerechte Arbeits- und Produktinosgestaltung in internationalen Wertschöpfungsketten</Title>
+  <Description>TestBeschreibung</Description>
+  <Date>2023-03-03T11:43:42.731456-00:00</Date>
   <ThumbnailTime>PT5S</ThumbnailTime>
   <Videos>
     <Video>
       <Start>PT0S</Start>
-      <File>9.mp4</File>
+      <File>2.mp4</File>
       <Type>Primary</Type>
     </Video>
   </Videos>
-  <Presentations>
-    <Presentation>
+  <Attachments>
+    <Attachment>
       <File>13.pdf</File>
-    </Presentation>
-  </Presentations>
+      <MimeType>pdf</MimeType>
+    </Attachment>
+  </Attachments>
 </Session>

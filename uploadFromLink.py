@@ -7,7 +7,7 @@ from UploadAndAuthentificationPanopto_Algo.panopto_oauth2 import PanoptoOAuth2
 from UploadAndAuthentificationPanopto_Algo.panopto_uploaderConstruct import PanoptoUploader
 
 
-class UploadFromOLW:
+class UploadFromLink:
 
     server = 'test-tu-darmstadt.cloud.panopto.eu'
 
@@ -17,9 +17,9 @@ class UploadFromOLW:
         self.access_token = oauth2.get_access_token_authorization_code_grant()
         self.requests_session.headers.update({'Authorization': 'Bearer ' + self.access_token})
 
-    def uploadSingleVideo(self, url, main_url, panoptoFolderID, videoTitle, videoDescription):
+    def uploadSingleVideo(self, url, main_url, panoptoFolderID, videoTitle, videoDescription, videoLicense):
         panoptoUploader = PanoptoUploader(self.server, True, self.oauth2, videoTitle,
-                                          videoDescription)
+                                          videoDescription + "\n" + videoLicense)
         fileChooser = FileChooser(url, main_url)
 
         panoptoUploader.upload_video(fileChooser.getOptimalVideoLink(), "", panoptoFolderID)
