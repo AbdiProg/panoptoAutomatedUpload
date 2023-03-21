@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Session xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://tempuri.org/UniversalCaptureSpecification/v1">
-  <Title>Menschengerechte Arbeits- und Produktinosgestaltung in internationalen Wertschöpfungsketten</Title>
-  <Description>TestBeschreibung</Description>
-  <Date>2023-03-03T11:12:11.164700-00:00</Date>
+  <Title>Analysis I Dr. Robert Haller-Dintelmann</Title>
+  <Description>Videobeschreibung:   Anhangbeschreibung:   Videolizenz: by-nc-sa Anhanglizenz:   </Description>
+  <Date>2023-03-21T12:09:25.825008-00:00</Date>
   <ThumbnailTime>PT5S</ThumbnailTime>
   <Videos>
     <Video>
       <Start>PT0S</Start>
-      <File>2.mp4</File>
+      <File>9.mp4</File>
       <Type>Primary</Type>
     </Video>
   </Videos>

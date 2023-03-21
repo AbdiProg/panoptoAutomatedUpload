@@ -102,7 +102,8 @@ class PanoptoUploader:
         self.__finish_upload(session_upload)
 
         # step 5 - monitor the progress of processing
-        self.__monitor_progress(upload_id)
+
+        return self.__monitor_progress(upload_id)
 
     def __create_session(self, folder_id):
         '''
@@ -328,8 +329,7 @@ class PanoptoUploader:
 
             print('  State: {0}'.format(session_upload['State']))
 
-            if session_upload['State'] == 4 or session_upload['State'] == 3:
+            if (session_upload['State'] == 4 or session_upload['State'] == 3) and session_upload['SessionId'] is not None:
                 sessionID = session_upload['SessionId']
                 print(sessionID)
-                # Complete
-                break
+                return sessionID

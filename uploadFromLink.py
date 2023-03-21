@@ -17,14 +17,14 @@ class UploadFromLink:
         self.access_token = oauth2.get_access_token_authorization_code_grant()
         self.requests_session.headers.update({'Authorization': 'Bearer ' + self.access_token})
 
-    def uploadSingleVideo(self, url, main_url, panoptoFolderID, videoTitle, videoDescription, videoLicense):
+    def uploadSingleVideo(self, url, main_url, panoptoFolderID, videoTitle, videoDescription):
         panoptoUploader = PanoptoUploader(self.server, True, self.oauth2, videoTitle,
-                                          videoDescription + "\n" + videoLicense)
+                                          videoDescription)
         fileChooser = FileChooser(url, main_url)
 
-        panoptoUploader.upload_video(fileChooser.getOptimalVideoLink(), "", panoptoFolderID)
+        return panoptoUploader.upload_video(fileChooser.getOptimalVideoLink(), "", panoptoFolderID)
 
-    def uploadVideoAndPdf(self, videoLink, pdfLink, main_url, panoptoFolderID, videoTitle, videoDescription, videoLicense, pdfLicense):
+    def uploadVideoAndPdf(self, videoLink, pdfLink, main_url, panoptoFolderID, videoTitle, videoDescription):
         panoptoUploader = PanoptoUploader(self.server, True, self.oauth2, videoTitle,
                                           videoDescription)
         fileChooserPDF = ""
@@ -33,5 +33,5 @@ class UploadFromLink:
             chooser = FileChooser(pdfLink, main_url)
             fileChooserPDF = chooser.getSlideLink()
 
-        panoptoUploader.upload_video(fileChooserVideo.getOptimalVideoLink(), fileChooserPDF, panoptoFolderID)
+        return panoptoUploader.upload_video(fileChooserVideo.getOptimalVideoLink(), fileChooserPDF, panoptoFolderID)
 

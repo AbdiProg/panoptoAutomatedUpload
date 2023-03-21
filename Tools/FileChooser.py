@@ -16,6 +16,7 @@ class FileChooser:
         "2.mp4",
         "1.mp4",
         "4.mp4",
+        "7.mp3",
         "205.webm",
         "106.webm",
         "105.webm"
@@ -28,6 +29,8 @@ class FileChooser:
         self.main_url = main_url
         self.url = url
         self.r = requests.get(self.url)
+        print("URL: ")
+        print(self.url)
         self.soup = BeautifulSoup(self.r.text, 'html.parser')
         self.parent = [node.get('href') for node in self.soup.find_all('a')]
 

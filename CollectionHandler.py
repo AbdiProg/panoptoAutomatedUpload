@@ -204,7 +204,14 @@ for lec in get_lectureUnits(responseJson):
 # print(json.dumps(get_collection(42), indent=6, sort_keys=True))
 # print(checkIfCollectionElementIsInRubric('191', responseJson["rubrics"])) #Geht!
 """
-
-responseJson = get_collection(373)
+"""
+responseJson = get_collection(42)
 print(json.dumps(responseJson, indent=6, sort_keys=True))
-print(get_informationOfCollection("373").learningUnits[2].resources[0])
+collection = get_informationOfCollection(42)
+learningUnits = collection.learningUnits
+resources = learningUnits[1].resources
+
+for resource in resources:
+    print(resource.link)
+"""
+#print(get_informationOfCollection("373").learningUnits[2].resources[0])
