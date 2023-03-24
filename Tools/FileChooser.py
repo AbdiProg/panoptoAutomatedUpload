@@ -28,9 +28,9 @@ class FileChooser:
     def __init__(self, url, main_url):
         self.main_url = main_url
         self.url = url
-        self.r = requests.get(self.url)
         print("URL: ")
         print(self.url)
+        self.r = requests.get(self.url)
         self.soup = BeautifulSoup(self.r.text, 'html.parser')
         self.parent = [node.get('href') for node in self.soup.find_all('a')]
 

@@ -4,19 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cc90bc2e-1463-4020-91bb-d67006a6d158" name="Changes" comment="upload von einer learning unit hinzugefügt unter uploadFromOLW.&#10;&#10;ressourcen haben nun beschreibungen, aber learning units haben keine mehr. Denn diese bestehen aus Ressourcen.">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collections.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/companies.csv" afterDir="false" />
+    <list default="true" id="cc90bc2e-1463-4020-91bb-d67006a6d158" name="Changes" comment="Eine Vielzahl Änderungen im Uploadverfahren vorgenommen">
+      <change afterPath="$PROJECT_DIR$/uploadCollectionFromOLW.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CollectionHandler.py" beforeDir="false" afterPath="$PROJECT_DIR$/CollectionHandler.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tools/FileChooser.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tools/FileChooser.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UploadAndAuthentificationPanopto_Algo/panopto_uploaderConstruct.py" beforeDir="false" afterPath="$PROJECT_DIR$/UploadAndAuthentificationPanopto_Algo/panopto_uploaderConstruct.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collections.csv" beforeDir="false" afterPath="$PROJECT_DIR$/collections.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/companies.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/mainTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainTest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panoptoDestinationFolderFinder.py" beforeDir="false" afterPath="$PROJECT_DIR$/panoptoDestinationFolderFinder.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/token_test-tu-darmstadt.cloud.panopto.eu_5aff5849-cfaa-4176-8a79-af82009b4df3.cache" beforeDir="false" afterPath="$PROJECT_DIR$/token_test-tu-darmstadt.cloud.panopto.eu_5aff5849-cfaa-4176-8a79-af82009b4df3.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploadFromLink.py" beforeDir="false" afterPath="$PROJECT_DIR$/uploadFromLink.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploadFromOLW.py" beforeDir="false" afterPath="$PROJECT_DIR$/uploadFromOLW.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploadFromOLW.py" beforeDir="false" afterPath="$PROJECT_DIR$/uploadFromOLWTools.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/upload_manifest_generated.xml" beforeDir="false" afterPath="$PROJECT_DIR$/upload_manifest_generated.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/upload_manifest_generated_with_pdf.xml" beforeDir="false" afterPath="$PROJECT_DIR$/upload_manifest_generated_with_pdf.xml" afterDir="false" />
     </list>
@@ -179,27 +176,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="folderNameExtraction" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="panoptoAutomatedUpload" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\Users\Abdulhaq\PycharmProjects\panoptoProjekt\FolderStructureCreation\folderNameExtraction.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="mainTest" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="panoptoAutomatedUpload" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -221,13 +197,34 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="uploadCollectionFromOLW" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="panoptoAutomatedUpload" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/uploadCollectionFromOLW.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.mainTest" />
+        <item itemvalue="Python.uploadCollectionFromOLW" />
         <item itemvalue="Python.CollectionHandler (1)" />
         <item itemvalue="Python.CollectionHandler" />
         <item itemvalue="Python.export (2)" />
-        <item itemvalue="Python.folderNameExtraction" />
       </list>
     </recent_temporary>
   </component>
@@ -330,7 +327,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678193245041</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Eine Vielzahl Änderungen im Uploadverfahren vorgenommen">
+      <created>1679397357888</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1679397357888</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -359,6 +363,7 @@
     <MESSAGE value="1.) Metadaten-Entnahme Algorithmus aktualisiert unter TestCollection&#10;2.) Lecturer und Area als Klassen für OOP hinzugefügt" />
     <MESSAGE value="Umsortierung" />
     <MESSAGE value="upload von einer learning unit hinzugefügt unter uploadFromOLW.&#10;&#10;ressourcen haben nun beschreibungen, aber learning units haben keine mehr. Denn diese bestehen aus Ressourcen." />
-    <option name="LAST_COMMIT_MESSAGE" value="upload von einer learning unit hinzugefügt unter uploadFromOLW.&#10;&#10;ressourcen haben nun beschreibungen, aber learning units haben keine mehr. Denn diese bestehen aus Ressourcen." />
+    <MESSAGE value="Eine Vielzahl Änderungen im Uploadverfahren vorgenommen" />
+    <option name="LAST_COMMIT_MESSAGE" value="Eine Vielzahl Änderungen im Uploadverfahren vorgenommen" />
   </component>
 </project>

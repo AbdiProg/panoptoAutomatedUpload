@@ -24,6 +24,8 @@ urls = {
     'users': '/user/',
 }
 
+problematicCollections = []
+
 
 def get_collection(collection_id):
     response = requests.get(f'{urls["api"]}{urls["collection"]}{collection_id}')
@@ -98,13 +100,22 @@ def get_lecturers(jsonData):
 
 
 jsonOfAllResources = get_resources()
+
+
 def get_resourceDescription(uuid):
     array2 = jsonOfAllResources
     filtered_list = [
         resource for resource in array2
         if resource['uuid'] == uuid
     ]
-    return filtered_list[0]['description']
+    print(filtered_list)
+    rDescription = ""
+    try:
+        rDescription = filtered_list[0]['description']
+    except Exception as e:
+        print("Keine Beschreibung!")
+
+    return rDescription
 
 
 def get_singleResource2(jsonData, element):
@@ -114,8 +125,9 @@ def get_singleResource2(jsonData, element):
     resourceJson = jsonData["resources"][str(element)]
     resourceLicense = resourceJson["license"]["code"]
     resourceType = resourceJson["type"]
-    #resourceDescription =
-    return Resource(resourceType, link, resourceLicense, get_resourceDescription(jsonData["resources"][str(element)]['uuid']))
+    # resourceDescription =
+    return Resource(resourceType, link, resourceLicense,
+                    get_resourceDescription(jsonData["resources"][str(element)]['uuid']))
 
 
 def get_lectureUnits(jsonData):
@@ -126,6 +138,7 @@ def get_lectureUnits(jsonData):
         if str(element) in jsonData["rubrics"]:
             rubricJson = jsonData["rubrics"][str(element)]
             learningUnitName = jsonData["rubrics"][str(element)]["name"]
+            if len(jsonData["rubrics"][str(element)]["resources"]) == 0: continue
             lectureUnitLecturers = get_lecturers(
                 jsonData["resources"][str(jsonData["rubrics"][str(element)]["resources"][0])])
             resources = []
@@ -164,16 +177,21 @@ def get_informationOfAllCollections():
     lectures = []
     for collection in collectionJson:
         singleCollection = get_collection(collection['id'])
+        print("Collection: ")
+        print(json.dumps(singleCollection, indent=6, sort_keys=True))
         lectureName = singleCollection["name"]
         lectureDescription = singleCollection["description"]
         lectureLearningUnits = get_lectureUnits(singleCollection)
         lectureLecturers = get_lecturers(singleCollection)
         lectureAreas = get_areas(singleCollection)
-        lectureSemesterValue = singleCollection["semester"]["value"]
 
-        tmpLecture = Lecture(lectureName, lectureDescription, lectureLearningUnits, lectureLecturers, lectureAreas,
-                             lectureSemesterValue)
-        lectures.append(tmpLecture)
+        if "semester" in singleCollection:
+            lectureSemesterValue = singleCollection["semester"]["value"]
+            tmpLecture = Lecture(lectureName, lectureDescription, lectureLearningUnits, lectureLecturers, lectureAreas,
+                                 lectureSemesterValue)
+            lectures.append(tmpLecture)
+        else:
+            problematicCollections.append(singleCollection)
 
     return lectures
 
@@ -214,4 +232,4 @@ resources = learningUnits[1].resources
 for resource in resources:
     print(resource.link)
 """
-#print(get_informationOfCollection("373").learningUnits[2].resources[0])
+# print(get_informationOfCollection("373").learningUnits[2].resources[0])

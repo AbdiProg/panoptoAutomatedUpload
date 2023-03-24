@@ -8,11 +8,7 @@ from UploadAndAuthentificationPanopto_Algo.panopto_oauth2 import PanoptoOAuth2
 from panoptoDestinationFolderFinder import PanoptoFolderFinder
 from uploadFromLink import UploadFromLink
 
-folder_id = 'ddce8d57-fcaa-402a-a1d1-afa900ec97d4'
-
-client_id = '5aff5849-cfaa-4176-8a79-af82009b4df3'
-
-client_secret = 'WB1eyMbrDnP23QxOkhRR/8GXNJGhwxQhV+6aOMFooBw='
+#folder_id = 'ddce8d57-fcaa-402a-a1d1-afa900ec97d4'
 
 problem_learning_units = []
 
@@ -20,13 +16,14 @@ lecturerContingent = 10
 
 class UploadFromOLW:
 
-    def __init__(self, client_id, client_secret):
+    def __init__(self, client_id, client_secret, folder_id):
 
         self.oauth2 = PanoptoOAuth2('test-tu-darmstadt.cloud.panopto.eu', client_id, client_secret, True)
         self.uploader = UploadFromLink(self.oauth2)
         self.requests_session = requests.Session()
         self.access_token = self.oauth2.get_access_token_authorization_code_grant()
         self.requests_session.headers.update({'Authorization': 'Bearer ' + self.access_token})
+        self.folder_id = folder_id
 
     """<iframe src="______VIEWERURL_____&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>"""
 
@@ -47,11 +44,11 @@ class UploadFromOLW:
         lecturerDiff = lecturerContingent - counter
 
         for i in range(0, lecturerDiff):
-            lecturersString = lecturersString + " " + ";"
+            lecturersString = lecturersString + "" + ";"
 
         iFrameStr = "<iframe src='" + panoptoPlaylistLink + "&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all' " + "height='405' " + "width='720' " + "style='border: 1px solid #464646;' " + "allowfullscreen allow='autoplay'></iframe>"
 
-        with open('collections.csv', 'a') as file:
+        with open('collections.csv', 'a', encoding='utf-8') as file:
             write = csv.writer(file)
             write.writerow(
                 [lecture.name, lecture.description, lecturersString, lecture.areas[0].name, lecture.semesterValue,
@@ -68,10 +65,10 @@ class UploadFromOLW:
         pdfResourceLinks = []
         videoResourceLink = ""
         # Vorbereitung für die PanoptoBeschreibung
-        resourceDescription = "Videobeschreibung: {videoDescription} " \
-                              "Anhangbeschreibung: {attachmentDescription} " \
-                              "Videolizenz: {videoLicense} " \
-                              "Anhanglizenz: {attachmentLicense} "
+        resourceDescription = "{videoDescription} " \
+                              "{attachmentDescription} " \
+                              "{videoLicense} " \
+                              "{attachmentLicense} "
 
         for resource in resources:
             fileChooser = FileChooser(resource.link, "https://olw-material.hrz.tu-darmstadt.de")
@@ -80,12 +77,12 @@ class UploadFromOLW:
             if optimalLinkVideoLink is not None and videoResourceLink == "":
                 videoResourceLink = resource.link
                 if resource.description != "":
-                    resourceDescription = resourceDescription.replace("{videoDescription}", resource.description)
+                    resourceDescription = resourceDescription.replace("{videoDescription}", "Videobeschreibung: " + resource.description)
                 else:
                     resourceDescription = resourceDescription.replace("{videoDescription}", " ")
 
                 if resource.license != "":
-                    resourceDescription = resourceDescription.replace("{videoLicense}", resource.license)
+                    resourceDescription = resourceDescription.replace("{videoLicense}", "Videolizenz: " + resource.license)
                 else:
                     resourceDescription = resourceDescription.replace("{videoLicense}", " ")
 
@@ -93,12 +90,12 @@ class UploadFromOLW:
                 # Ressource handelt, muss es eine PDF sein.
 
                 pdfResourceLinks.append(resource.link)
-                if resource.description != "":  
-                    resourceDescription = resourceDescription.replace("{attachmentDescription}", resource.description)
+                if resource.description != "":
+                    resourceDescription = resourceDescription.replace("{attachmentDescription}", "Anhangbeschreibung: " +resource.description)
                 else:
                     resourceDescription = resourceDescription.replace("{attachmentDescription}", " ")
                 if resource.license != "":
-                    resourceDescription = resourceDescription.replace("{attachmentLicense}", resource.license)
+                    resourceDescription = resourceDescription.replace("{attachmentLicense}", "Anhanglizenz: " +resource.license)
                 else:
                     resourceDescription = resourceDescription.replace("{attachmentLicense}", " ")
 
@@ -132,24 +129,33 @@ class UploadFromOLW:
 
 
         sessionIDs = []
-        folderFinder = PanoptoFolderFinder(folder_id, self.requests_session)
+        folderFinder = PanoptoFolderFinder(self.folder_id, self.requests_session)
         folderID = folderFinder.findDestinationFolderByString(lecture.areas[0].name, lecture.semesterValue)
 
-        for learningUnit in lecture.learningUnits:
-            sessionIDs.append(self.uploadSingleLearningUnit(learningUnit, folderID))
+        #Extra-Ordner für die Lecture
+        payloadFolder = {'Name': name, 'Description': description, 'Parent': folderID}
+        response = self.requests_session.post('https://test-tu-darmstadt.cloud.panopto.eu/Panopto/api/v1/folders',
+                                              json=payloadFolder)
+        print("Waiting for Folder-Link...")
+        time.sleep(3)
+        responseJson = response.json()
+        destinationFolderID = responseJson['Id']
 
-        payload = {'Name': name, 'Description': description,
-                   'FolderId': folderID,
+        for learningUnit in lecture.learningUnits:
+            sessionIDs.append(self.uploadSingleLearningUnit(learningUnit, destinationFolderID))
+
+        payloadPlaylist = {'Name': name, 'Description': description,
+                   'FolderId': destinationFolderID,
                    'Sessions': sessionIDs
                    }
 
         print(sessionIDs)
-        response = self.requests_session.post('https://test-tu-darmstadt.cloud.panopto.eu/Panopto/api/v1/playlists',
-                                              json=payload)
+        response2 = self.requests_session.post('https://test-tu-darmstadt.cloud.panopto.eu/Panopto/api/v1/playlists',
+                                              json=payloadPlaylist)
 
         print("Waiting for Playlist-Link...")
         time.sleep(3)
-        playlistResponseJson = response.json()
+        playlistResponseJson = response2.json()
         embedURL = playlistResponseJson['Urls']['EmbedUrl']
         print("Writing into CSV...")
         self.writeIntoCSV(lecture, embedURL)
