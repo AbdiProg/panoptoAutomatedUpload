@@ -5,15 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cc90bc2e-1463-4020-91bb-d67006a6d158" name="Changes" comment="Eine Vielzahl Änderungen im Uploadverfahren vorgenommen">
-      <change afterPath="$PROJECT_DIR$/uploadCollectionFromOLW.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/problematicCollections.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CollectionHandler.py" beforeDir="false" afterPath="$PROJECT_DIR$/CollectionHandler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tools/FileChooser.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tools/FileChooser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UploadAndAuthentificationPanopto_Algo/panopto_oauth2.py" beforeDir="false" afterPath="$PROJECT_DIR$/UploadAndAuthentificationPanopto_Algo/panopto_oauth2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UploadAndAuthentificationPanopto_Algo/panopto_uploaderConstruct.py" beforeDir="false" afterPath="$PROJECT_DIR$/UploadAndAuthentificationPanopto_Algo/panopto_uploaderConstruct.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/collections.csv" beforeDir="false" afterPath="$PROJECT_DIR$/collections.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/companies.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/mainTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainTest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/panoptoDestinationFolderFinder.py" beforeDir="false" afterPath="$PROJECT_DIR$/panoptoDestinationFolderFinder.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/token_test-tu-darmstadt.cloud.panopto.eu_5aff5849-cfaa-4176-8a79-af82009b4df3.cache" beforeDir="false" afterPath="$PROJECT_DIR$/token_test-tu-darmstadt.cloud.panopto.eu_5aff5849-cfaa-4176-8a79-af82009b4df3.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploadFromOLW.py" beforeDir="false" afterPath="$PROJECT_DIR$/uploadFromOLWTools.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploadCollectionFromOLW.py" beforeDir="false" afterPath="$PROJECT_DIR$/uploadCollectionFromOLW.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploadFromOLWTools.py" beforeDir="false" afterPath="$PROJECT_DIR$/uploadFromOLWTools.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/upload_manifest_generated.xml" beforeDir="false" afterPath="$PROJECT_DIR$/upload_manifest_generated.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/upload_manifest_generated_with_pdf.xml" beforeDir="false" afterPath="$PROJECT_DIR$/upload_manifest_generated_with_pdf.xml" afterDir="false" />
     </list>
@@ -334,7 +335,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679397357888</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Eine Vielzahl Änderungen im Uploadverfahren vorgenommen">
+      <created>1679654128730</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1679654128730</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

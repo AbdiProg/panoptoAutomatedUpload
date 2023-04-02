@@ -9,10 +9,5 @@ from panoptoDestinationFolderFinder import PanoptoFolderFinder
 
 # Upload-Test
 from uploadCollectionFromOLW import uploadLectureFromOLW
-from uploadFromLink import UploadFromLink
-
-
 
 uploadLectureFromOLW()
-
-

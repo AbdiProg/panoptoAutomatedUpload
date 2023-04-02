@@ -76,9 +76,9 @@ class PanoptoOAuth2():
                 time.sleep(1)
             redirected_path = httpd.last_get_path
 
-        print()
-        print('Get a new access token with authorization code, which is provided as return path: {0}'.format(
-            redirected_path))
+       # print()
+      #  print('Get a new access token with authorization code, which is provided as return path: {0}'.format(
+      #      redirected_path))
         session.fetch_token(self.access_token_endpoint, client_secret=self.client_secret,
                             authorization_response=redirected_path)
         self.__save_token_to_cache(session.token)
@@ -93,16 +93,16 @@ class PanoptoOAuth2():
         Returning None if failing to get the new access token with any reason.
         '''
         try:
-            print()
-            print('Read cached token from {0}'.format(self.cache_file))
+         #   print()
+        #    print('Read cached token from {0}'.format(self.cache_file))
             with open(self.cache_file, 'rb') as fr:
                 token = pickle.load(fr)
 
             session = OAuth2Session(self.client_id, token=token)
             session.verify = self.ssl_verify
 
-            print()
-            print('Get a new access token by using saved refresh token.')
+       #     print()
+       #     print('Get a new access token by using saved refresh token.')
             extra = {'client_id': self.client_id, 'client_secret': self.client_secret}
             session.refresh_token(self.access_token_endpoint, **extra)
             self.__save_token_to_cache(session.token)

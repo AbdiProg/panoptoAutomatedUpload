@@ -17,13 +17,16 @@ from pathlib import Path
 PART_SIZE = 20 * 1024 * 1024
 
 # Template for manifest XML file.
-MANIFEST_FILE_TEMPLATE = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'VideoMetadataXML','upload_manifest_template.xml').replace("\\","/")
-MANIFEST_FILE_TEMPLATE_PDF = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'VideoMetadataXML','upload_manifest_template_with_pdf.xml').replace("\\","/")
-#MANIFEST_FILE_TEMPLATE = 'C:/Users/Abdulhaq/PycharmProjects/panoptoProjekt/VideoMetadataXML/upload_manifest_template_withoutpdf.xml'
+MANIFEST_FILE_TEMPLATE = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'VideoMetadataXML',
+                                      'upload_manifest_template.xml').replace("\\", "/")
+MANIFEST_FILE_TEMPLATE_PDF = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'VideoMetadataXML',
+                                          'upload_manifest_template_with_pdf.xml').replace("\\", "/")
+# MANIFEST_FILE_TEMPLATE = 'C:/Users/Abdulhaq/PycharmProjects/panoptoProjekt/VideoMetadataXML/upload_manifest_template_withoutpdf.xml'
 
 # Filename of manifest XML file. Any filename is acceptable.
 MANIFEST_FILE_NAME = 'upload_manifest_generated.xml'
 MANIFEST_FILE_NAME_PDF = 'upload_manifest_generated_with_pdf.xml'
+
 
 class PanoptoUploader:
     def __init__(self, server, ssl_verify, oauth2, videoTitle, videoDescription):
@@ -86,17 +89,24 @@ class PanoptoUploader:
         upload_id = session_upload['ID']
         upload_target = session_upload['UploadTarget']
 
-        # step 2 - upload the video file
-        self.__multipart_upload_single_fileBYURL(upload_target, file_path)
-        if pdffile_path != "": self.__multipart_upload_single_fileBYURL(upload_target, pdffile_path)
+        # step 2 - upload the video file and eventually the pdf file
+        value = self.__multipart_upload_single_fileBYURL(upload_target, file_path)
+        if not value:
+            return False
+        if pdffile_path != "":
+            value2 = self.__multipart_upload_single_fileBYURL(upload_target, pdffile_path)
+            if not value2:
+                return False
 
         # step 3 - create manifest file and uplaod it
         if pdffile_path != "":
             self.__create_manifest_for_video(file_path, pdffile_path, MANIFEST_FILE_NAME_PDF)
             self.__multipart_upload_single_fileONDISK(upload_target, MANIFEST_FILE_NAME_PDF)
+
         else:
             self.__create_manifest_for_video(file_path, pdffile_path, MANIFEST_FILE_NAME)
             self.__multipart_upload_single_fileONDISK(upload_target, MANIFEST_FILE_NAME)
+
 
         # step 4 - finish the upload
         self.__finish_upload(session_upload)
@@ -124,8 +134,8 @@ class PanoptoUploader:
         print('  ID: {0}'.format(session_upload['ID']))
         print('  target: {0}'.format(session_upload['UploadTarget']))
 
-        #!!!!!!!!!!!!!!!!!!!!!!!
-        #hier fehlt eine Zeile, welche war das?
+        # !!!!!!!!!!!!!!!!!!!!!!!
+        # hier fehlt eine Zeile, welche war das?
 
         return session_upload
 
@@ -142,10 +152,10 @@ class PanoptoUploader:
         bucket = elements[-2]
         prefix = elements[-1]
 
-        #Neuer Code mit URL Handhabung!
-        #object_key = ''
+        # Neuer Code mit URL Handhabung!
+        # object_key = ''
 
-       # if file_path.__contains__("http"):
+        # if file_path.__contains__("http"):
 
         object_key = '{0}/{1}'.format(prefix, os.path.basename(file_path))
 
@@ -171,13 +181,13 @@ class PanoptoUploader:
 
         # Iterate through parts
         req = urllib.request.Request(file_path,
-                                          method='HEAD')
+                                     method='HEAD')
         f = urllib.request.urlopen(req)
         print(f.headers["Content-Length"])
         parts = []
         uploaded_bytes = 0
         total_bytes = f.headers["Content-Length"]
-        #with open(file_path, 'rb') as f:
+        # with open(file_path, 'rb') as f:
 
         i = 1
         f2 = urlopen(file_path)
@@ -194,9 +204,13 @@ class PanoptoUploader:
             i += 1
 
         # Copmlete
-        result = s3.complete_multipart_upload(Bucket=bucket, Key=object_key, UploadId=mpu_id,
-                                              MultipartUpload={"Parts": parts})
+        try:
+            result = s3.complete_multipart_upload(Bucket=bucket, Key=object_key, UploadId=mpu_id,
+                                                  MultipartUpload={"Parts": parts})
+        except:
+            return False
         print('  -- complete called.')
+        return True
 
     def __multipart_upload_single_fileONDISK(self, upload_target, file_path):
         '''
@@ -210,7 +224,6 @@ class PanoptoUploader:
         service_endpoint = '/'.join(elements[0:-2:])
         bucket = elements[-2]
         prefix = elements[-1]
-
 
         object_key = '{0}/{1}'.format(prefix, os.path.basename(file_path))
 
@@ -296,7 +309,6 @@ class PanoptoUploader:
         upload_id = session_upload['ID']
         upload_target = session_upload['UploadTarget']
 
-
         print('')
         while True:
             print('Calling PUT PublicAPI/REST/sessionUpload/{0} endpoint'.format(upload_id))
@@ -329,7 +341,8 @@ class PanoptoUploader:
 
             print('  State: {0}'.format(session_upload['State']))
 
-            if (session_upload['State'] == 4 or session_upload['State'] == 3) and session_upload['SessionId'] is not None:
+            if (session_upload['State'] == 4 or session_upload['State'] == 3 or session_upload['State'] == 1) and session_upload[
+                'SessionId'] is not None:
                 sessionID = session_upload['SessionId']
                 print(sessionID)
                 return sessionID
